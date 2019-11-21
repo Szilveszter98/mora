@@ -10,9 +10,9 @@ var sass = require('gulp-sass');
 //var uglify =require("gulp-uglify");
 sass.compiler = require('node-sass');
  
-var JS_PATH = "public/**/*.js"
+var JS_PATH = "public/**/*.js";
  
-const CSS_PATH ="public/style/**/*.css"
+const CSS_PATH ="public/scss/**/*.scss";
 //styles
  
  
@@ -21,16 +21,16 @@ gulp.task("styles", async function(){
    //return gulp.src(["public/scss/reset/reset.scss", CSS_PATH])
    return gulp.src(CSS_PATH)
    .pipe(plumber(function (err){
-       console.log("Styles error", err);
+       console.log("Styles error",err);
    }))
-   .pipe(sourcemaps.init())
+   //.pipe(sourcemaps.init())
    .pipe(autoprefix())
- //  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-  // .pipe(sass().on('error', sass.logError))
-    .pipe(concat("styles.css"))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write("./maps"))
-    .pipe(gulp.dest("public/dist"))
+   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+   //.pipe(sass().on('error', sass.logError))
+   //.pipe(concat("style.css"))
+   .pipe(cleanCSS({compatibility: 'ie8'}))
+   //.pipe(sourcemaps.write("./maps"))
+   .pipe(gulp.dest("public/dist"))
  
 })
  
@@ -61,6 +61,6 @@ gulp.task("default", async function(){
  
 gulp.task("watch", async function(){
  
-   gulp.watch(JS_PATH, gulp.series("scripts"))
+   // gulp.watch(JS_PATH, gulp.series("scripts"))
    gulp.watch(CSS_PATH, gulp.series("styles"))
 })

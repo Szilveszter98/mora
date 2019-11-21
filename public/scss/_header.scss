@@ -20,7 +20,7 @@ a{
 .header{
     height: 95vh;
     /* clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); */
-    background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), #FFC10A), url("bilder/header.jpg");
+    background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), #FFC10A), url("../bilder/header.jpg");
     border-bottom: solid #0C0C0C 2px;
 }
 
@@ -175,7 +175,7 @@ display: block;
     ". . . checkout checkout";
     font-size: 1rem;
     border-radius: 5px;
-    margin right: 5px;
+    margin-right: 5px;
 }
 
 .cart__products{
