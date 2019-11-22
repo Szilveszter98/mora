@@ -1,0 +1,161 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+
+}
+body{
+    font-family: 'Sulphur Point', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    background-color: #212121;
+  }
+
+.bd-example{
+    margin:auto;
+    width: 795px;
+    height: auto;
+    box-shadow: 0 0 15px 3px #FFC10A;
+    margin-top: 50px;
+    border: 1px solid #212121;
+}
+  .slideshow h5{
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 10px black;
+  }
+  .slideshow p{
+    font-weight: 800;
+    color:white;
+  text-shadow: 0 0 10px black;
+}
+@media (max-width: 880px) {
+    .bd-example{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  }
+/* Cards */
+
+.Cardmain{
+  position: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+ 
+}
+
+.Tjänsttext {
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+    padding:100px;
+    font-family: 'Sulphur Point', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px black;
+    
+}
+
+.card_image img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #FFC10A;
+  padding: 1rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid #FFC10A;
+  background: transparent;
+  position: relative;
+ 
+}
+
+.btn:hover {
+  background-color: #FFC10A;
+}
+.price_text{ 
+  font-size: x-large;
+  color: white;}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  
+  
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: #212121;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 1px #FFC10A;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 18px;
+  text-shadow: 0 0 2px #212121;
+  margin-bottom: 50px;
+  
+  
+}
+
+.card_content {
+  padding: 1rem;
+  background-color: #212121;
+}
+
+.card_title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+  text-decoration: underline;
+}
+
+.card_text {
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+
+
+

@@ -12,10 +12,10 @@ sass.compiler = require('node-sass');
  
 var JS_PATH = "public/**/*.js"
  
-const CSS_PATH ="public/style/**/*.css"
+const CSS_PATH ="public/style/main.scss"
 //styles
  
- 
+ //dry dont repeat yourself
 gulp.task("styles", async function(){
    console.log("styles is running");
    //return gulp.src(["public/scss/reset/reset.scss", CSS_PATH])
@@ -23,13 +23,13 @@ gulp.task("styles", async function(){
    .pipe(plumber(function (err){
        console.log("Styles error", err);
    }))
-   .pipe(sourcemaps.init())
+  // .pipe(sourcemaps.init())
    .pipe(autoprefix())
  //  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-  // .pipe(sass().on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat("styles.css"))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write("./maps"))
+   // .pipe(sourcemaps.write("./maps"))
     .pipe(gulp.dest("public/dist"))
  
 })
