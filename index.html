@@ -8,25 +8,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/736e4ed1a9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./public/dist/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara%7CM+PLUS+1p%7CSulphur+Point&display=swap"
+        rel="stylesheet">
+
 </head> 
 
 <body>
-        <ul class="navbar">
-                <a href="#"><img class="header__menu__logo" id="header__logo" src="public/bilder/logo.PNG" alt=""></a>
-                <li class="header__links" id="header__links__home"><a href="#">Hem</a></li>
-                <li class="header__links" id="header__links__service"><a href="#">Tjänster</a>
+ 
+        <ul class="navbarmain">
+                <a href="#"><img class="header__menu__logo" id="header__logo" src="public/bilder/logogul.png" alt=""></a>
+                <li class="header__links" id="header__links__home"><a href="#header">Hem</a></li>
+                <li class="header__links" id="header__links__service"><a href="#tjänster">Tjänster</a>
                     <div class="service__dropdown">
-                        <a href="#">Tjänst1</a>
-                        <a href="#">Tjänst2</a>
-                        <a href="#">Tjänst3</a>
-                        <a href="#">Tjänst4</a>
-                        <a href="#">Tjänst5</a>
-                        <a href="#">Tjänst6</a>
+                        <a href="#design">Design</a>
+                        <a href="#ecommerce">Ecommerce</a>
+                        <a href="#takecare">Take care</a>
+                        <a href="#problemlösning">Problemlösning</a>
+                        <a href="#host">Host</a>
+                        <a href="#beunique">Be Unique</a>
                     </div>
                 </li>
         
-                <li class="header__links" id="header__links__contact"><a href="#">Kontakta Oss</a></li>
-                <li class="header__links" id="header__links__about"><a href="#">Om Oss</a></li>
+                <li class="header__links" id="header__links__contact"><a href="#kontakt">Kontakta Oss</a></li>
+                <li class="header__links" id="header__links__about"><a href="#omoss">Om Oss</a></li>
                 <li class="header__cart" id="header__cart__dropdown"><a href="#">Kundvagn <i
                             class="fa fa-shopping-cart fa-lg"></i></a>
                     <div class="cart__dropdown">
@@ -41,7 +45,7 @@
                     </div>
                 </li>
             </ul>
-            <header class="header">
+            <header class="header" id="header">
         
         
             </header>
@@ -119,7 +123,7 @@
 <!--Cards-->
         <div class="Cardmain">
                 <ul class="cards">
-                  <li class="cards_item">
+                  <li class="cards_item" id="design">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/design.jpg"></div>
                       <div class="card_content">
@@ -130,7 +134,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="cards_item">
+                  <li class="cards_item" id="ecommerce">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/ecommerce(3).jpg"></div>
                       <div class="card_content">
@@ -141,7 +145,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="cards_item">
+                  <li class="cards_item" id="takecare">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/small-agencies-vs-big-agencies.jpg"></div>
                       <div class="card_content">
@@ -152,7 +156,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="cards_item">
+                  <li class="cards_item" id="problemlösning">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/problem.jpg"></div>
                       <div class="card_content">
@@ -163,7 +167,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="cards_item">
+                  <li class="cards_item" id="host">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/host.jpg"></div>
                       <div class="card_content">
@@ -174,7 +178,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="cards_item">
+                  <li class="cards_item" id="beunique">
                     <div class="card">
                       <div class="card_image"><img src="public/bilder/unik.jpg"></div>
                       <div class="card_content">
@@ -259,7 +263,7 @@
                     </div>
                   </div>
                   <div class="footer-right">
-                    <p class="footer-company-about">
+                    <p class="footer-company-about" id="omoss">
                       <span>• Om Oss</span>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae temporibus a cupiditate assumenda rerum error suscipit nemo?
                       Sectetur adipisicing elit.</p>

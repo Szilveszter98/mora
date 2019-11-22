@@ -1,9 +1,8 @@
   /* The footer  */
    
 footer{
-    position: fixed;
     bottom: 0;
-    font-family: 'Sulphur Point', sans-serif;
+    font-family:$mainfont-family;
     
   }
    
@@ -14,11 +13,12 @@ footer{
    
    
 .footer-distributed{
-    background-color: #212121;
+    background-color: $mainBlack;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     padding: 50px 50px 35px 50px;
+    position: relative;
    
   }
    
@@ -47,7 +47,7 @@ footer{
   /* Footer links */
    
   .footer-distributed .footer-links{
-    color:  white;
+    color:$TextColor;
     margin: 20px 0 12px;
   }
    
@@ -59,7 +59,7 @@ footer{
   }
    
   .footer-distributed .footer-company-name{
-    color:  white;
+    color: $TextColor;
     font-size: 14px;
     font-weight: normal;
     margin: 0;
@@ -74,8 +74,8 @@ footer{
    
    
   .footer-distributed .footer-center i{
-    background-color: #FFC10A;
-    color: #212121;
+    background-color: $maincolor;
+    color: $mainBlack;
     font-size: 25px;
     width: 38px;
     height: 38px;
@@ -98,7 +98,7 @@ footer{
    
   .footer-distributed .footer-center p{
     display: inline-block;
-    color: white;
+    color: $TextColor;
     vertical-align: middle;
     margin:0;
   }
@@ -111,7 +111,7 @@ footer{
   }
    
   .footer-distributed .footer-center p a{
-    color: white;
+    color: $TextColor;
     text-decoration: none;;
   }
    
@@ -124,7 +124,7 @@ footer{
    
   .footer-distributed .footer-company-about{
     line-height: 20px;
-    color:  white;
+    color:  $TextColor;
     font-size: 13px;
     font-weight: normal;
     margin: 0;
@@ -132,7 +132,7 @@ footer{
    
   .footer-distributed .footer-company-about span{
     display: block;
-    color:  white;
+    color:  $TextColor;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -147,8 +147,8 @@ footer{
     width: 35px;
     height: 35px;
     cursor: pointer;
-    background-color:  #FFC10A;
-    color: #212121;
+    background-color:  $maincolor;
+    color: $mainBlack;
     border-radius: 2px;
     font-size: 20px;
     text-align: center;

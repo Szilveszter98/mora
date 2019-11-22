@@ -8,30 +8,31 @@
 
 }
 body{
-    font-family: 'Sulphur Point', sans-serif;
+    font-family: $mainfont-family;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0;
-    background-color: #212121;
+    background-color:$mainBlack;
   }
 
 .bd-example{
     margin:auto;
     width: 795px;
     height: auto;
-    box-shadow: 0 0 15px 3px #FFC10A;
+    box-shadow: 0 0 15px 3px $maincolor;
     margin-top: 50px;
-    border: 1px solid #212121;
+    border: 1px solid $mainBlack;
 }
   .slideshow h5{
     font-weight: 800;
-    color: white;
-    text-shadow: 0 0 10px black;
+    color:$TextColor;
+    text-shadow: 0 0 10px $TextShadowColor;
+
   }
   .slideshow p{
     font-weight: 800;
-    color:white;
-  text-shadow: 0 0 10px black;
+    color:$TextColor;
+  text-shadow: 0 0 10px $TextShadowColor;
 }
 @media (max-width: 880px) {
     .bd-example{
@@ -55,12 +56,12 @@ body{
     font-size: 35px;
     font-weight: 400;
     text-align: center;
-    color: white;
+    color: $TextColor;
     text-decoration: underline;
     padding:100px;
-    font-family: 'Sulphur Point', sans-serif;
+    font-family:$mainfont-family;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px black;
+    text-shadow: 0 0 8px $TextShadowColor;
     
 }
 
@@ -71,7 +72,7 @@ body{
 }
 
 .btn {
-  color: #FFC10A;
+  color: $maincolor;
   padding: 1rem;
   font-size: 20px;
   text-transform: uppercase;
@@ -80,18 +81,19 @@ body{
   display: block;
   width: 100%;
   cursor: pointer;
-  border: 2px solid #FFC10A;
+  border: 2px solid $maincolor;
   background: transparent;
   position: relative;
  
 }
 
 .btn:hover {
-  background-color: #FFC10A;
+  background-color: $maincolor;
 }
 .price_text{ 
   font-size: x-large;
-  color: white;}
+  color: $TextColor;
+}
 
 .cards {
   display: flex;
@@ -121,14 +123,14 @@ body{
 }
 
 .card {
-  background-color: #212121;
+  background-color: $mainBlack;
   border-radius: 8px;
-  box-shadow: 0 0 8px 1px #FFC10A;
+  box-shadow: 0 0 8px 1px $maincolor;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   margin: 18px;
-  text-shadow: 0 0 2px #212121;
+  text-shadow: 0 0 2px $mainBlack;
   margin-bottom: 50px;
   
   
@@ -136,11 +138,11 @@ body{
 
 .card_content {
   padding: 1rem;
-  background-color: #212121;
+  background-color: $mainBlack;
 }
 
 .card_title {
-  color: white;
+  color: $TextColor;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -150,7 +152,7 @@ body{
 }
 
 .card_text {
-  color: white;
+  color: $TextColor;
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;    

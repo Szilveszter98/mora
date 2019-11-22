@@ -5,33 +5,34 @@
 }
 
 html{
-    font-family: 'Sulphur Point', sans-serif;
+    font-family:$mainfont-family;
+    scroll-behavior: smooth;
 }
 
 body{
-    background: #212121
+    background: $mainBlack;
 }
 
 a{
-    color: white;
+    color: $TextColor;
     text-decoration: none;
 }
 
 .header{
     height: 95vh;
     /* clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); */
-    background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), #FFC10A), url("../bilder/header.jpg");
+    background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), $maincolor), url("../bilder/header.jpg");
     border-bottom: solid #0C0C0C 2px;
 }
 
-.navbar{
+.navbarmain{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-areas: 
     "logo . . home service contact about . . cart";
     width: 100%;
     height: 3.5rem;
-    background: #212121;
+    background: $mainBlack;;
     position: fixed;
     z-index: 2;
     font-size: 1.2rem;
@@ -49,7 +50,7 @@ a{
     list-style: none;
     text-decoration: none;
     text-align: center;
-    color: white;
+    color: $TextColor;
     
 }
 
@@ -62,8 +63,8 @@ a{
 }
 
 #header__links__home:hover{
-    background: #FFC10A;
-    color: #212121;
+    background: $maincolor;
+    color: $mainBlack;;
 }
 #header__links__service{
     grid-area: service;
@@ -75,7 +76,7 @@ a{
 .service__dropdown{
     display: none;
     position: absolute;
-    background-color: #FFC10A;
+    background-color: $maincolor;
     min-width: 151.5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -89,8 +90,8 @@ a{
   }
 
 .service__dropdown a:hover{
-    background: #212121;
-    color: white;
+    background: $mainBlack;;
+    color: $TextColor;
 }
 
 #header__links__service:hover .service__dropdown{
@@ -98,8 +99,8 @@ display: block;
 }
 
 #header__links__service:hover{
-    background: #FFC10A;
-    color: #212121;
+    background: $maincolor;
+    color: $mainBlack;;
 }
 
 
@@ -112,8 +113,8 @@ display: block;
 }
 
 #header__links__contact:hover{
-    background: #FFC10A;
-    color: #212121;
+    background: $maincolor;
+    color: $mainBlack;;
 }
 
 #header__links__about{
@@ -123,13 +124,13 @@ display: block;
     padding-top: 13px;
 }
 #header__links__about:hover{
-    background: #FFC10A;
-    color: #212121;
+    background: $maincolor;
+    color: $mainBlack;;
 }
 
 .header__cart{
     grid-area: cart;
-    background: #FFC10A;
+    background: $maincolor;
     list-style: none;
     text-decoration: none;
     justify-items: center;
@@ -147,7 +148,7 @@ display: block;
 .cart__dropdown{
     display: none;
     position: absolute;
-    background-color: #FFC10A;
+    background-color: $maincolor;
     min-width: 450px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -178,8 +179,8 @@ display: block;
 
 .cart__products{
     grid-area: products;
-    border-bottom: solid 2px #212121;
-    border-top: solid 2px #212121;
+    border-bottom: solid 2px $mainBlack;;
+    border-top: solid 2px $mainBlack;;
 }
 
 #cart__rubrik{
@@ -190,9 +191,9 @@ display: block;
 
 #cart__chkout{
     grid-area: checkout;
-    background: #212121;
+    background: $mainBlack;;
     border-radius: 15px;
-    color: white;
+    color:$TextColor;
     border: none;
     margin-right: 5px;
     margin-bottom: 5px;
