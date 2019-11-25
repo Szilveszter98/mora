@@ -2,7 +2,7 @@
    
 footer{
     bottom: 0;
-    font-family:$mainfont-family;
+   font-family: 'Sulphur Point', sans-serif;
     
   }
    
@@ -13,7 +13,7 @@ footer{
    
    
 .footer-distributed{
-    background-color: $mainBlack;
+    background-color:$mainBlack;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
@@ -147,7 +147,7 @@ footer{
     width: 35px;
     height: 35px;
     cursor: pointer;
-    background-color:  $maincolor;
+    background-color: $maincolor;
     color: $mainBlack;
     border-radius: 2px;
     font-size: 20px;

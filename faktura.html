@@ -11,16 +11,21 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/dist/faktura.css">
+    <link rel="stylesheet" href="public/dist/main.css">
     <script src="app.js" defer></script>
+    <style>
+        body {
+            background: white;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="toolbar hidden-print">
             <div class="text-right">
-                <button id="printFaktura" class="btn btn-warning"><i class="fa fa-print"></i> Skriva ut</button>
-                <button class="btn btn-warning"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
+                <button id="printFaktura" class="btn-print"><i class="fa fa-print"></i> Skriva ut</button>
+                <button class="btn-pdf"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
             </div>
         </div>
     </header>
