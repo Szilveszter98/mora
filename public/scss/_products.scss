@@ -1,0 +1,163 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+
+}
+body{
+    font-family: $mainfont-family;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    background-color:$mainBlack;
+  }
+
+.bd-example{
+    margin:auto;
+    width: 795px;
+    height: auto;
+    box-shadow: 0 0 15px 3px $maincolor;
+    margin-top: 50px;
+    border: 1px solid $mainBlack;
+}
+  .slideshow h5{
+    font-weight: 800;
+    color:$TextColor;
+    text-shadow: 0 0 10px $TextShadowColor;
+
+  }
+  .slideshow p{
+    font-weight: 800;
+    color:$TextColor;
+  text-shadow: 0 0 10px $TextShadowColor;
+}
+@media (max-width: 880px) {
+    .bd-example{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  }
+/* Cards */
+
+.Cardmain{
+  position: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+ 
+}
+
+.Tjänsttext {
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: $TextColor;
+    text-decoration: underline;
+    padding:100px;
+    font-family:$mainfont-family;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px $TextShadowColor;
+    
+}
+
+.card_image img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: $maincolor;
+  padding: 1rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid $maincolor;
+  background: transparent;
+  position: relative;
+ 
+}
+
+.btn:hover {
+  background-color: $maincolor;
+}
+.price_text{ 
+  font-size: x-large;
+  color: $TextColor;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  
+  
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: $mainBlack;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 1px $maincolor;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 18px;
+  text-shadow: 0 0 2px $mainBlack;
+  margin-bottom: 50px;
+  
+  
+}
+
+.card_content {
+  padding: 1rem;
+  background-color: $mainBlack;
+}
+
+.card_title {
+  color: $TextColor;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+  text-decoration: underline;
+}
+
+.card_text {
+  color: $TextColor;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+
+
+

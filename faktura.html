@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/dist/faktura.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="toolbar hidden-print">
+            <div class="text-right">
+                <button id="printFaktura" class="btn btn-warning"><i class="fa fa-print"></i> Skriva ut</button>
+                <button class="btn btn-warning"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <!-- Faktura -->
+    <div class="box">
+        <div class="faktura overflow-auto">
+            <section class="container head">
+                <div class="row">
+                    <div class="col-md-4 title">
+                        <h1 style="font-size: 60px;">Faktura</h1>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                        <img src="public/bilder/logo3.png" id="logo" alt="firma logo">
+                    </div>
+                </div>
+            </section>
+            <!-- kunder info -->
+            <section class="container kundInfo">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h6>Faktura till</h6>
+                        <h3>Kunders namn </h3>
+                        <p>1 kunders address <br>Stad, Stan, Land <br> Postnummer</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Kundnummer</h6>
+                        <p>12345</p>
+                        <h6>Fakturadatum</h6>
+                        <p id="fdatum">2019-11-07</p>
+                        <h6>Förfallodatum</h6>
+                        <p id="forfallo">2019-12-07</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Plusgironr.</h6>
+                        <p>1234567-8</p>
+                        <h6>Bankgironr.</h6>
+                        <p>123-4667</p>
+                    </div>
+                    <div class="col-md-3 alignR">
+                        <h6>Totalt summan</h6>
+                        <h1>25000 kr</h1>
+                        <h6>OCR referens</h6>
+                        <p id="ocr">123440000</p>
+                    </div>
+                </div>
+            </section>
+            <!-- product och pris lista -->
+            <section class="container prolist">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Beskrivning</th>
+                            <th scope="col">Antal</th>
+                            <th scope="col">Enhet</th>
+                            <th scope="col">Pris</th>
+                            <th scope="col">Moms</th>
+                            <th scope="col">Moms kr</th>
+                            <th scope="col">Belopp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Apputveckling</td>
+                            <td>1</td>
+                            <td>st</td>
+                            <td>10000 kr</td>
+                            <td>25%</td>
+                            <td>2500 kr</td>
+                            <td>12500 kr</td>
+                        </tr>
+                        <tr>
+                            <td>Apputveckling</td>
+                            <td>1</td>
+                            <td>st</td>
+                            <td>10000 kr</td>
+                            <td>25%</td>
+                            <td>2500 kr</td>
+                            <td>12500 kr</td>
+                        </tr>
+                        <tr>
+                            <td>Apputveckling</td>
+                            <td>1</td>
+                            <td>st</td>
+                            <td>10000 kr</td>
+                            <td>25%</td>
+                            <td>2500 kr</td>
+                            <td>12500 kr</td>
+                        </tr>
+                        <tr>
+                            <td>Apputveckling</td>
+                            <td>1</td>
+                            <td>st</td>
+                            <td>10000 kr</td>
+                            <td>25%</td>
+                            <td>2500 kr</td>
+                            <td>12500 kr</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <!-- summan av faktura -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Belopp före moms:</td>
+                            <td>20000 kr</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Total moms:</td>
+                            <td>5000 kr</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Summa att betala:</td>
+                            <td>25000 kr</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            <!-- faktura footer, firma info -->
+            <section class="container firma">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Frima Ab</th>
+                            <th>Kontaktuppgifter</th>
+                            <th>Betalningsuppfigter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Storgatan1</td>
+                            <td>Matthias Johansson</td>
+                            <td>Plusgironr: 1234567-8</td>
+                        </tr>
+                        <tr>
+                            <td>123 45 exempelstad</td>
+                            <td>Epost:caifeng@gamil.com</td>
+                            <td>Bankgironr: 123-4567</td>
+                        </tr>
+                        <tr>
+                            <td>org.nr 123456-6789</td>
+                            <td>Tel 123456-6789</td>
+                            <td>IBAN: SE1234567890</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
