@@ -189,7 +189,7 @@ display: block;
 
 }
 
-#cart__chkout{
+#cart__chkout {
     grid-area: checkout;
     background: $mainBlack;;
     border-radius: 15px;
@@ -197,7 +197,9 @@ display: block;
     border: none;
     margin-right: 5px;
     margin-bottom: 5px;
+    
 }
+
 
 #cart__totalsumma{
     grid-area: total;
