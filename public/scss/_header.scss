@@ -149,7 +149,7 @@ display: block;
     display: none;
     position: absolute;
     background-color: $maincolor;
-    min-width: 450px;
+    // min-width: 450px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 0%;
@@ -176,6 +176,27 @@ display: block;
     border-radius: 5px;
     margin-right: 5px;
 }
+// styles to cart item
+.cart-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap:.3rem;
+    padding: .5rem;
+    margin: .5rem auto;
+}
+.cart-item input{
+    border:none;
+    width:2rem;
+}
+.cart-item button{
+    background: $mainBlack;
+    color: white;
+    border: none;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+// end of styles to cart item
 
 .cart__products{
     grid-area: products;
@@ -197,6 +218,7 @@ display: block;
     border: none;
     margin-right: 5px;
     margin-bottom: 5px;
+    text-transform:uppercase;
 }
 
 #cart__totalsumma{
