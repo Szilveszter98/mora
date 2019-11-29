@@ -97,7 +97,7 @@ console.log("hej hej")
 let productContainer = document.querySelector(".products-container");
 
 function checkoutToCart(){
-    window.document.location = "./kundvagn2.html";
+    window.document.location = "./kundvagn.html";
 }
 
 
