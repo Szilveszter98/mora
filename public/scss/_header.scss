@@ -203,6 +203,30 @@ display: block;
     border-top: solid 2px $mainBlack;;
 }
 
+
+// ----styles to cart item-----
+.cart-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap:.3rem;
+    padding: .5rem;
+    margin: .5rem auto;
+}
+.cart-item input{
+    border:none;
+    width:2rem;
+}
+.cart-item button{
+    background: $mainBlack;
+    color: white;
+    border: none;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+// -----end of styles to cart item-------
+
+
 #cart__rubrik{
     font-size: 1.6rem;
     grid-area: rubrik;
