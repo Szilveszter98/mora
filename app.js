@@ -1,115 +1,149 @@
-const addToCartButtons = document.getElementsByClassName('card_btn')
-for (var i = 0; i < addToCartButtons.length; i++) {
-    var button = addToCartButtons[i]
-    button.addEventListener('click', addToCartClicked)
+// skapa variable
+let cart = [];
+
+
+let addToCartButtons = document.querySelectorAll(".card_btn");
+console.log(addToCartButtons)
+// loop alla köp button
+for (i = 0; i < addToCartButtons.length; i++) {
+    let addToCartbutton = addToCartButtons[i];
+    console.log("hej från loopen")
+    addToCartbutton.addEventListener("click", addToCartClicked);
 }
 
+let product = {};
 function addToCartClicked(event) {
-    const button = event.target
-    const shopItem = button.parentElement
-    const itemTitle = shopItem.getElementsByClassName('card_title')[0].innerText
-    const itemPrice = shopItem.getElementsByClassName('price_text')[0].innerText
-    const itemText = shopItem.getElementsByClassName('card_text')[0].innerText
-    const fullPathImg = shopItem.getElementsByClassName('card_image')[1].src
-    const pos = fullPathImg.indexOf("public");
-    const imageSrc = fullPathImg.slice(pos);
-
-    addItemToCart(itemTitle, itemPrice, imageSrc, itemText);
-    updateCartTotal()
+    let button = event.target;
+    let shopItem = button.parentElement.parentElement;
+    let item = shopItem.querySelector(".card_title").innerText;
+    let priceText = shopItem.querySelector(".price_text").innerText;
+    let price = Number(priceText.split(" ")[1]);
+    let descriptionText = shopItem.querySelector(".card_text").innerText;
+    let description = descriptionText.split("•").join("");
+    let imgSrc = shopItem.querySelector("img").src;
+    product = {
+        item,
+        imgSrc,
+        description,
+        price,
+        amount: 1
+    }
+    console.log(product);
+    cart = [...cart, product];
+    Storage.saveCart(cart);
+    addItemToCart();
+    uppdateTotal();
 }
 
-function addItemToCart(itemTitle, itemPrice, imageSrc, itemText) {
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('cart-row')
-    var cartProducts = document.getElementsByClassName('cart__products')[0]
-    var cartItemNames = cartProducts.getElementsByClassName('cart-item-title')
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == itemTitle) {
-            alert('This item is already added to the cart')
-            return
-        }
+let cartProducts = document.querySelector(".cart__products");
+
+function addItemToCart() {
+    let cartItemDIV = document.createElement("div");
+    cartProducts.appendChild(cartItemDIV);
+    cartItemDIV.classList.add("cart-item");
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    for (const element of cart) {
+        for (const property in element)
+            cartItemDIV.innerHTML =
+                ` <span class="cart-item-title">${element.item}</span>
+    <span class="cart-price">${element.price} kr</span>
+    <input class="cart-quantity-input" type="number" value="1">
+    <button class="btn-remove" type="button">REMOVE</button>`
     }
 
-    var cartRowContents = `
-    <div class="cart-item">
-        <span class="cart-item-title">${itemTitle}</span>
-        <span class="cart-price">${itemPrice}</span>
-        <input class="cart-quantity-input" type="number" value="1">
-        <button class="btn-remove" type="button">REMOVE</button>
-    </div>`
-
-
-
-
-    cartRow.innerHTML = cartRowContents
-    cartProducts.append(cartRow)
-    cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem)
-    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
-
-}
-
-
-function removeCartItem(event) {
-    var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
-}
-
-function quantityChanged(event) {
-    var input = event.target
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
+    let removeButtons = cartItemDIV.querySelectorAll(".btn-remove");
+    for (i = 0; i < removeButtons.length; i++) {
+        let removeButton = removeButtons[i];
+        removeButton.addEventListener("click", removeClicked);
+        console.log(i);
     }
-    updateCartTotal()
 }
 
-function updateCartTotal() {
-    var cartItemContainer = document.getElementsByClassName('cart__products')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    var total = 0
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('kr', ''))
-        var quantity = quantityElement.value
-        total = total + (price * quantity)
+function removeClicked(event) {
+    console.log("hej")
+    let removeButton = event.target;
+    let removeItem = removeButton.parentElement;
+    // let item=removeItem.querySelector(".cart-item-title").innerText;
+    // let cart = JSON.parse(localStorage.getItem("cart"));
+    // if(cart.item==item){
+    //     let index=cart.indexof(item);
+    //     cart.splice(index, 1);
+    // }
+    removeItem.remove();
+    uppdateTotal();
+}
+
+function uppdateTotal() {
+    console.log("hej från total")
+    let total = 0;
+    let cartItemDIVs = cartProducts.querySelectorAll(".cart-item");
+    for (i = 0; i < cartItemDIVs.length; i++) {
+        let priceText = cartItemDIVs[i].querySelector(".cart-price").innerText;
+        let price = Number(priceText.split(" ")[0]);
+        let amount = Number(cartItemDIVs[i].querySelector(".cart-quantity-input").value);
+        console.log(amount);
+        total += (amount * price);
+        console.log(total);
     }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart_summa')[0].innerText = total + " kr"
+    let cartSumma = document.querySelector("#cart__summa");
+    cartSumma.innerHTML = total + " kr";
+}
+
+let checkoutButton = document.querySelector("#cart__chkout");
+checkoutButton.addEventListener("click", checkoutToCart)
+console.log("hej hej")
+
+let productContainer = document.querySelector(".products-container");
+
+function checkoutToCart(){
+    window.document.location = "./kundvagn2.html";
 }
 
 
 
-function toInoivePageClicked() {
-    var cartItems = document.getElementsByClassName('cart__products')[0]
-
-    //  cartItems.length
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-        window.location.href = "index_kundkorg.html";
+class Storage {
+    static saveCart(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
-    updateCartTotal()
+    static getCart() {
+        return localStorage.getItem("cart")
+            ? JSON.parse(localStorage.getItem("cart"))
+            : [];
+    }
 }
+
+
+
+
+
+
 
 // javascript för faktura
 
-let fakturaDatum=document.querySelector(".fakturaDatum");
-let forfalloDatum=document.querySelector(".forfalloDatum");
-let kundnummer=document.querySelector(".kundnummer");
-var today=new Date();
-Date.prototype.addDays = function(days){
-    var date = new Date(this.valueOf());
-    date.setDate(date.getDate() + days);
-    return date;
-}
-fakturaDatum.innerHTML= today.toLocaleDateString("en-US");
-forfalloDatum.innerHTML = today.addDays(30).toLocaleDateString("en-US");
-kundnummer.innerHTML = today.valueOf();
+// let fakturaDatum = document.querySelector(".fakturaDatum");
+// let forfalloDatum = document.querySelector(".forfalloDatum");
+// let kundnummer = document.querySelector(".kundnummer");
+// let fakturaNummer = document.querySelector(".fakturaNummer");
 
-// print js
-const printFaktura=document.querySelector("#printFaktura");
-const fakturaContent=document.querySelector(".faktura");
-printFaktura.addEventListener("click",()=>{window.print(fakturaContent)});
+// var today = new Date();
+
+
+// let nummer= Number(Math.floor(Math.random() * 100000));
+// fakturaNummer.innerHTML = nummer;
+
+// Date.prototype.addDays = function (days) {
+//     var date = new Date(this.valueOf());
+//     date.setDate(date.getDate() + days);
+//     return date;
+// }
+// fakturaDatum.innerHTML = today.toLocaleDateString("en-US");
+// forfalloDatum.innerHTML = today.addDays(30).toLocaleDateString("en-US");
+// kundnummer.innerHTML = today.valueOf();
+
+// // print js
+// const printFaktura = document.querySelector("#printFaktura");
+// const fakturaContent = document.querySelector(".faktura");
+// printFaktura.addEventListener("click", () => { window.print(fakturaContent) });
 
 // Slut av javascript för faktura

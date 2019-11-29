@@ -11,7 +11,8 @@ body{
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0;
-    background-color:$mainBlack;
+    background-color: $mainBlack;
+  
   }
 
 .bd-example{
@@ -32,7 +33,7 @@ body{
   .slideshow p{
     font-weight: 800;
     color:$TextColor;
-  text-shadow: 0 0 10px $TextShadowColor;
+    text-shadow: 0 0 10px $TextShadowColor;
 }
 @media (max-width: 880px) {
     .bd-example{

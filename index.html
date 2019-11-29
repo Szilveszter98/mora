@@ -10,7 +10,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/736e4ed1a9.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara%7CM+PLUS+1p%7CSulphur+Point&display=swap"
-  rel="stylesheet">
+    rel="stylesheet">
   <link rel="stylesheet" href="./public/dist/main.css">
   <script src="app.js" defer></script>
 </head>
@@ -23,24 +23,24 @@
     <li class="header__links" id="header__links__service"><a href="#tjänster">Tjänster</a>
       <div class="service__dropdown">
         <a href="#design">Design</a>
-        <a href="#ecommerce">Ecommerce</a>
-        <a href="#takecare">Take care</a>
-        <a href="#problemlösning">Problemlösning</a>
-        <a href="#host">Host</a>
-        <a href="#beunique">Be Unique</a>
+        <a href="#ecommerce">E-handelslösning</a>
+        <a href="#helhetslösning">Helhetslösning</a>
+        <a href="#programmering">Programmering</a>
+        <a href="#host">Databas</a>
+        <a href="#apputveckling">Apputveckling</a>
       </div>
     </li>
 
     <li class="header__links" id="header__links__contact"><a href="#kontakt">Kontakta Oss</a></li>
     <li class="header__links" id="header__links__about"><a href="#omoss">Om Oss</a></li>
-    <li class="header__cart" id="header__cart__dropdown"><a href="#">Kundvagn <i
-          class="fa fa-shopping-cart fa-lg"></i></a>
+    <li class="header__cart" id="header__cart__dropdown">
+      <a href="kundvagn2.html">Kundvagn<i class="fa fa-shopping-cart fa-lg"></i></a>
       <div class="cart__dropdown">
         <p id="cart__rubrik">Kundvagn</p>
         <button id="cart__chkout">Checkout</button>
         <div class="cart__products">
           <!-- cart item -->
-          <div class="cart-item">
+          <!-- <div class="cart-item">
             <span class="cart-item-title">Host</span>
             <span class="cart-price">1000 kr</span>
             <input class="cart-quantity-input" type="number" value="1">
@@ -50,12 +50,12 @@
             <span class="cart-item-title">Ecommerce</span>
             <span class="cart-price">1000 kr</span>
             <input class="cart-quantity-input" type="number" value="1">
-            <button type="btn-remove">Remove</button>
-          </div>
+            <button class="btn-remove" type="button">Remove</button>
+          </div> -->
           <!-- End of cart item -->
         </div>
         <p id="cart__totalsumma">Total:</p>
-        <p id="cart__summa">5000:-</p>
+        <p id="cart__summa"></p>
       </div>
     </li>
   </ul>
@@ -132,7 +132,7 @@
   </div>
   <!--End of slideshow-->
   <div>
-    <h1 class="Tjänsttext">Tjänster</h1>
+    <h1 class="Tjänsttext" id="tjänster">Tjänster</h1>
   </div>
   <!--Cards-->
   <div class="Cardmain">
@@ -142,44 +142,43 @@
           <div class="card_image"><img src="public/bilder/design.jpg"></div>
           <div class="card_content">
             <h2 class="card_title">Design</h2><br>
-            <p class="card_text"> Vi kan hjälpa er med design <br> •Bakgrund <br> •Färger <br> •Style </p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <p class="card_text"> Vi kan hjälpa er med design <br> • Bakgrund <br> • Färger <br> • Style </p>
+            <h3 class="price_text">Pris: 3500 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
       </li>
       <li class="cards_item" id="ecommerce">
         <div class="card">
-          <div class="card_image"><img src="public/bilder/ecommerce(3).jpg"></div>
+          <div class="card_image"><img src="public/bilder/ecommerce.jpg"></div>
           <div class="card_content">
-            <h2 class="card_title">Ecommerce</h2><br>
-            <p class="card_text">Vi hjälper er med Online Marketing <br>•Social Media <br> •Online shop <br> •Nå flera
-              kunder</p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <h2 class="card_title">E-handelslösning</h2><br>
+            <p class="card_text">Vi hjälper er med Online Marketing <br>• Social Media <br> • Online shop <br> • Nå
+              flera kunder</p>
+            <h3 class="price_text">Pris: 8000 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
       </li>
-      <li class="cards_item" id="takecare">
+      <li class="cards_item" id="helhetslösning">
         <div class="card">
           <div class="card_image"><img src="public/bilder/small-agencies-vs-big-agencies.jpg"></div>
           <div class="card_content">
-            <h2 class="card_title">Take Care</h2><br>
-            <p class="card_text">Hjälp för båda småa och stora företag<br> •Uppdates <br>• Nya funktioner <br> •Changes
-            </p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <h2 class="card_title">Helhetslösning</h2><br>
+            <p class="card_text">Hjälp för båda småa och stora företag<br> • Uppdates <br>• Nya funktioner <br> •
+              Changes </p>
+            <h3 class="price_text">Pris: 1500 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
       </li>
-      <li class="cards_item" id="problemlösning">
+      <li class="cards_item" id="programmering">
         <div class="card">
           <div class="card_image"><img src="public/bilder/problem.jpg"></div>
           <div class="card_content">
-            <h2 class="card_title">Problem lösningar</h2><br>
-            <p class="card_text">Vi löser problem <br> •Problem med koder <br> •Problem med gamla lösningar <br>
-              •Problem med uppdates</p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <h2 class="card_title">Programmering</h2><br>
+            <p class="card_text">Vi löser problem <br> • Programmering <br> • Olika koder <br> • Nya funktioner</p>
+            <h3 class="price_text">Pris: 1800 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
@@ -188,22 +187,22 @@
         <div class="card">
           <div class="card_image"><img src="public/bilder/host.jpg"></div>
           <div class="card_content">
-            <h2 class="card_title">Host</h2><br>
-            <p class="card_text">Vi hostar webbsidor<br> •Vi har snabba servers <br> •Modern servers <br> •Server
+            <h2 class="card_title">Databas</h2><br>
+            <p class="card_text">Vi hostar webbsidor<br> • Vi har snabba servers <br> • Modern servers <br> • Server
               service/uppdates </p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <h3 class="price_text">Pris: 800 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
       </li>
-      <li class="cards_item" id="beunique">
+      <li class="cards_item" id="apputveckling">
         <div class="card">
-          <div class="card_image"><img src="public/bilder/unik.jpg"></div>
+          <div class="card_image"><img src="public/bilder/ecommerce(3).jpg"></div>
           <div class="card_content">
-            <h2 class="card_title">Be Unique</h2><br>
-            <p class="card_text">Stick ut från mängden <br> •Egen design just för er <br> •Vi bygger egen style för er
-              <br> •Be UNIQUE, WIN more </p>
-            <h3 class="price_text">Pris: 2000kr</h3>
+            <h2 class="card_title">Apputveckling</h2><br>
+            <p class="card_text">Applikation utveckling <br> • Egen applikation <br> • Applikation för företag <br>
+              • Applikation för privatkunder </p>
+            <h3 class="price_text">Pris: 2000 kr</h3>
             <button class="btn card_btn">KÖP</button>
           </div>
         </div>
@@ -240,7 +239,7 @@
       </div>
     </div>
   </div>
-  <!-- End of kontakt oss -->
+  <!-- End of kontakta oss -->
 
 
   <!--Footer-->
@@ -283,7 +282,8 @@
     <div class="footer-right">
       <p class="footer-company-about" id="omoss">
         <span>• Om Oss</span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae temporibus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae
+        temporibus
         a cupiditate assumenda rerum error suscipit nemo?
         Sectetur adipisicing elit.</p>
       <div class="footer-icons">
