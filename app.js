@@ -1,7 +1,6 @@
 // skapa variable
 let cart = [];
 
-
 let addToCartButtons = document.querySelectorAll(".card_btn");
 console.log(addToCartButtons)
 // loop alla köp button
@@ -40,7 +39,6 @@ function addItemToCart() {
     cartProducts.appendChild(cartItemDIV);
     cartItemDIV.classList.add("cart-item");
     let cart = Storage.getCart();
-
     for (const element of cart) {
         for (const property in element)
             cartItemDIV.innerHTML =
