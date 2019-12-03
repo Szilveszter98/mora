@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
-    <script src="app.js" defer></script>
+    <script src="faktura.js" defer></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -20,7 +20,6 @@
 
         body {
             background: white;
-            overflow-x: hidden;
         }
     </style>
 </head>
@@ -49,21 +48,21 @@
 
         </table>
         <!-- kunder info -->
-<<<<<<< HEAD
         <section class="container kundInfo-container">
             <div class="kundInfo">
                 <div>
                     <h6>Faktura till</h6>
                     <h3 class="kunderNamn">Kunders namn </h3>
-                    <address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
+                    <h6>kunders referens:</h6><p class="kunder-referens"></p>
+                    <h6>kunders address:</h6><address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
                 </div>
                 <div>
-                    <h6 class="kundnummer">Kundnummer</h6>
-                    <p>12345</p>
-                    <h6>Fakturadatum</h6>
-                    <p class="fakturaDatum">2019-11-07</p>
-                    <h6>Förfallodatum</h6>
-                    <p class="forfalloDatum">2019-12-07</p>
+                    <h6>Kundnummer:</h6>
+                    <p class="kundnummer"></p>
+                    <h6>Fakturadatum:</h6>
+                    <p class="fakturaDatum"></p>
+                    <h6>Förfallodatum:</h6>
+                    <p class="forfalloDatum"></p>
                 </div>
                 <div>
                     <h6>Plusgironr.</h6>
@@ -73,44 +72,16 @@
                 </div>
                 <div class="alignR">
                     <h6>Totalt summan</h6>
-                    <h1 class="summan">25000 kr</h1>
+                    <h1 class="summan summan-top"></h1>
+                    <br><br><br>
                     <h6>Fakturanummer</h6>
-                    <p class="fakturaNummer">123440000</p>
+                    <p class="fakturaNummer"></p>
                 </div>
             </div>
         </section>
         <!-- End of kunder info -->
-=======
-        <section class="container kundInfo">
-            <table class="table table-borderless kundInfo_table">
-                <tr>
-                    <td>Faktura till</td>
-                    <td>Fakturadatum</td>
-                    <td>Plusgironr.</td>
-                    <td class="alignR">Totalt summan</td>
-                </tr>
-                <tr class="lineHight">
-                    <td class="kunderNamn">Kunders namn</td>
-                    <td class="fakturaDatum"></td>
-                    <td>1234567-8</td>
-                    <td class="summan alignR">25000 kr</td>
-                </tr>
-                <tr>
-                    <td class="kunderAddress" rowspan="2">kunders address Stad,<br> Stan, Land Postnummer</td>
-                    <td>Förfallodatum</td>
-                    <td>Bankgironr</td>
-                    <td class="alignR">Kundnummer</td>
-                </tr>
-                <tr>
-                    <td class="forfalloDatum"></td>
-                    <td>123-4667</td>
-                    <td class="kundnummer alignR">12345</td>
-                </tr>
-            </table>
-        </section>
->>>>>>> 3d6edb1674f1a78b70d1f6ffbcba7bba4714eda7
         <!-- product och pris lista -->
-        <section class="container prolist">
+        <section class="container">
             <table class="table table-border-top">
                 <thead>
                     <tr>
@@ -123,16 +94,7 @@
                         <th scope="col">Belopp</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Apputveckling</td>
-                        <td>1</td>
-                        <td>st</td>
-                        <td>10000 kr</td>
-                        <td>25%</td>
-                        <td>2500 kr</td>
-                        <td>12500 kr</td>
-                    </tr>
+                <tbody class="prolist">
                     <tr>
                         <td>Apputveckling</td>
                         <td>1</td>
@@ -148,17 +110,17 @@
                     <tr>
                         <td colspan="4"></td>
                         <td colspan="2">Belopp före moms:</td>
-                        <td>20000 kr</td>
+                        <td class="summaForeMoms"></td>
                     </tr>
                     <tr>
                         <td colspan="4"></td>
                         <td colspan="2">Total moms:</td>
-                        <td>5000 kr</td>
+                        <td class="totalMoms"></td>
                     </tr>
                     <tr>
                         <td colspan="4"></td>
                         <td colspan="2">Summa att betala:</td>
-                        <td class="summan">25000 kr</td>
+                        <td class="summan summan-table"></td>
                     </tr>
                 </tfoot>
             </table>
