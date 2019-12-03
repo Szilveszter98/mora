@@ -13,6 +13,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
     <script src="app.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+    
     <style>
         html {
             scroll-behavior: smooth;
@@ -29,13 +32,16 @@
     <header>
         <div class="toolbar hidden-print">
             <div class="text-right">
-                <button id="printFaktura" class="btn-print"><i class="fa fa-print"></i> Skriva ut</button>
-                <button class="btn-pdf"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
+                <button id="printFaktura" class="btn-print" onclick="printDiv('printableArea')">  <i class="fa fa-print"></i> Skriva ut</button>
+                <button class="btn-pdf" id="submit" ><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
+                <div id="print-btn"></div>
+
             </div>
         </div>
     </header>
     <hr>
     <!-- Faktura -->
+    <div id="printableArea">
     <div class="faktura overflow-auto">
         <table class="table table-borderless">
             <tr class="head">
@@ -49,38 +55,6 @@
 
         </table>
         <!-- kunder info -->
-<<<<<<< HEAD
-        <section class="container kundInfo-container">
-            <div class="kundInfo">
-                <div>
-                    <h6>Faktura till</h6>
-                    <h3 class="kunderNamn">Kunders namn </h3>
-                    <address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
-                </div>
-                <div>
-                    <h6 class="kundnummer">Kundnummer</h6>
-                    <p>12345</p>
-                    <h6>Fakturadatum</h6>
-                    <p class="fakturaDatum">2019-11-07</p>
-                    <h6>Förfallodatum</h6>
-                    <p class="forfalloDatum">2019-12-07</p>
-                </div>
-                <div>
-                    <h6>Plusgironr.</h6>
-                    <p>1234567-8</p>
-                    <h6>Bankgironr.</h6>
-                    <p>123-4667</p>
-                </div>
-                <div class="alignR">
-                    <h6>Totalt summan</h6>
-                    <h1 class="summan">25000 kr</h1>
-                    <h6>Fakturanummer</h6>
-                    <p class="fakturaNummer">123440000</p>
-                </div>
-            </div>
-        </section>
-        <!-- End of kunder info -->
-=======
         <section class="container kundInfo">
             <table class="table table-borderless kundInfo_table">
                 <tr>
@@ -108,7 +82,6 @@
                 </tr>
             </table>
         </section>
->>>>>>> 3d6edb1674f1a78b70d1f6ffbcba7bba4714eda7
         <!-- product och pris lista -->
         <section class="container prolist">
             <table class="table table-border-top">
@@ -194,6 +167,9 @@
         </section>
         <div></div>
     </div>
+</div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

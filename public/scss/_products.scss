@@ -46,19 +46,27 @@ body{
     font-size: 20px;
     text-transform: uppercase;
     border-radius: 4px;
-    font-weight: 400;
+    font-weight: 600;
     display: block;
     width: 100%;
     cursor: pointer;
     border: 2px solid $maincolor;
     background: transparent;
     position: relative;
-   
+    
   }
   
   .btn:hover {
+    
+    color: $mainBlack;
     background-color: $maincolor;
+
   }
+.card_btn{
+  padding: 1rem;
+
+}
+
   .price_text{ 
     font-size: x-large;
     color: $TextColor;

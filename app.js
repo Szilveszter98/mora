@@ -1,4 +1,4 @@
-// skapa variable
+/* // skapa variable
 let cart = [];
 
 
@@ -114,7 +114,7 @@ class Storage {
 }
 
 
-
+ */
 
 
 
@@ -147,3 +147,51 @@ class Storage {
 // printFaktura.addEventListener("click", () => { window.print(fakturaContent) });
 
 // Slut av javascript för faktura
+
+function printDiv(printableArea) {
+     var printContents = document.getElementById(printableArea).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+
+
+var doc = new jsPDF();
+
+doc.text('This is a test', 10, 10)
+doc.viewerPreferences({'FitWindow': true}, true)
+doc.save("viewerPreferences.pdf")
+
+
+
+
+document.querySelector(".btn-pdf").addEventListener("click", function (){
+    var doc = new jsPDF();
+
+doc.text('This is a test', 10, 10)
+doc.viewerPreferences({'FitWindow': true}, true)
+doc.save("viewerPreferences.pdf")
+
+})
+/* var specialElementHandlers = {
+    '#print-btn': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#submit').click(function () {
+    doc.fromHTML($('#printableArea').html(), 15, 15, {
+        'width':     170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('faktura.pdf');
+
+}); */
+
+
+
+
