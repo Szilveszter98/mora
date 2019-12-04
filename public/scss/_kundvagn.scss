@@ -92,6 +92,7 @@ hr{
 .total-container{
     margin:1.5rem;
     text-align: right;
+    font-weight: 700;
 }
 
 @media only screen and(max-width:600px){
@@ -104,4 +105,37 @@ hr{
         max-width: 50px;
         max-height: 50px;
     }
+}
+
+@media screen and (max-width: 800px){
+    .navbarmain{
+        display: none;
+    }
+
+    .navbarmobile{
+        display: block;
+        position: fixed;
+        background: $mainBlack;
+        top: 0%;
+        width: 100%;
+        z-index: 22;
+        border-bottom: solid black 2px;
+    }
+
+    .mobile__logo{
+        position: absolute;
+        left: 1%;
+        top: 1%;
+    }
+
+    .mobile__links{
+        position: relative;
+        top: 1%;
+        width: 100%;
+        text-align: center;
+    }
+
+    
+
+    
 }

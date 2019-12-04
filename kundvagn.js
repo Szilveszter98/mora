@@ -26,7 +26,7 @@ function showCart() {
     productLista.innerHTML = result;
     let productTotal=document.querySelector(".product-total");
     productTotal.innerHTML=JSON.parse(localStorage.getItem("total"));
-    let removeButtons = productLista.querySelectorAll(".btn-remove");
+    let removeButtons = productLista.querySelectorAll(".product-remove");
     for (i = 0; i < removeButtons.length; i++) {
         let removeButton = removeButtons[i];
         removeButton.addEventListener("click", removeClicked);
@@ -37,8 +37,8 @@ function showCart() {
 function removeClicked(event) {
     console.log("hej")
     let removeButton = event.target;
-    let removeItem = removeButton.parentElement;
-    let item = removeItem.querySelector(".cart-item-title").innerText;
+    let removeItem = removeButton.parentElement.parentElement;
+    let item = removeItem.querySelector(".product-title").innerText;
     let cart = Storage.getCart();
     for (i=0; i<cart.length; i++) {
         if (cart[i].item == item) {
@@ -51,6 +51,20 @@ function removeClicked(event) {
     uppdateTotal();
 }
 
+function uppdateTotal() {
+    let total = 0;
+    console.log("hej");
+    let productSingleDIVs = document.querySelectorAll(".product-single");
+    for (i = 0; i < productSingleDIVs.length; i++) {
+        let priceText = productSingleDIVs[i].querySelector(".product-price").innerText;
+        let price = Number(priceText.split(" ")[0]);
+        let amount = Number(productSingleDIVs[i].querySelector(".product-amount-input").value);
+        total += (amount * price);
+    }
+    let productTotal = document.querySelector(".product-total");
+    productTotal.innerHTML = total;
+    localStorage.setItem("total", JSON.stringify(total));
+}
 
 
 let btnFaktura = document.querySelector(".btn-faktura");

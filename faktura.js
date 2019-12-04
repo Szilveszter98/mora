@@ -1,4 +1,3 @@
-
 // javascript för faktura
 let fakturaDatum = document.querySelector(".fakturaDatum");
 let forfalloDatum = document.querySelector(".forfalloDatum");
@@ -60,8 +59,6 @@ function showData(){
 }
 
 
-
-
 // localStorage function
 class Storage {
     static saveCart(cart) {
@@ -73,8 +70,6 @@ class Storage {
             : [];
     }
 }
-
-
 
 
 

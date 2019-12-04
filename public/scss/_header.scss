@@ -261,3 +261,42 @@ display: block;
     margin-right: 5px;
     margin-top: 5px;
 }
+
+.navbarmobile{
+    display:none
+}
+
+@media screen and (max-width: 800px){
+    .navbarmain{
+        display: none;
+    }
+
+    .navbarmobile{
+        display: block;
+        position: fixed;
+        background: $mainBlack;
+        width: 100%;
+        z-index: 22;
+        border-bottom: solid black 2px;
+    }
+
+    .mobile__logo{
+        position: absolute;
+        left: 1%;
+        top: 1%;
+    }
+
+    .mobile__links{
+        position: relative;
+        top: 1%;
+        width: 100%;
+        text-align: center;
+    }
+
+    
+
+    #resposive__cart{
+        background: $maincolor;
+        color: black;
+    }
+}
