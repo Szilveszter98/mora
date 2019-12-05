@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/736e4ed1a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="public/dist/main.css">
+    <title>Kundvagn</title>
+    <script src="kundvagn.js" defer></script>
+    <style>
+        body {
+            background: #FFC10A;
+            /* background: white; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <ul class="navbarmain">
+        <li>
+            <a href="index.html"><img class="header__menu__logo" id="header__logo" src="public/bilder/logogul.png" alt=""></a>
+        </li>
+        <li class="header__links" id="header__links__home"><a href="index.html#header">Hem</a></li>
+        <li class="header__links" id="header__links__service"><a href="index.html#tjänster">Tjänster</a>
+            <div class="service__dropdown">
+                <a href="index.html#design">Design</a>
+                <a href="index.html#ecommerce">E-handelslösning</a>
+                <a href="index.html#helhetslösning">Helhetslösning</a>
+                <a href="index.html#programmering">Programmering</a>
+                <a href="index.html#host">Databas</a>
+                <a href="index.html#apputveckling">Apputveckling</a>
+            </div>
+        </li>
+        <li class="header__links" id="header__links__contact"><a href="index.html#kontakt">Kontakta Oss</a></li>
+        <li class="header__links" id="header__links__about"><a href="#omoss">Om Oss</a></li>
+    </ul>
+    <ul class="navbarmobile" id="myMobileNav">
+
+        <li class="mobile__logo">
+            <a href="index.html"><img src="public/bilder/logogul.png" alt="" class="header__menu__logo" id="header__logo2"></a>
+        </li>
+        <li class="mobile__links"><a href="index.html" id="mobile__home">Hem</a></li>
+        <li class="mobile__links"><a href="index.html#tjänster" id="mobile__service">Tjänster</a></li>
+        <li class="mobile__links"><a href="index.html#kontakt" id="mobile__contact">Kontakta Oss</a></li>
+        <li class="mobile__links"><a href="#omoss" id="mobile__about">Om Oss</a></li>
+
+
+    </ul>
+
+    <!-- cart view -->
+    <div class="container cart-view-container">
+        <div class="products-container">
+            <h2>Din varor</h2>
+            <div class="product-lista">
+                <!-- single product -->
+                <!-- <div class="product-single">
+                    <img src="./public/bilder/design.jpg" alt="product image">
+                    <div class="product-center">
+                        <h3 class="product-title">Design</h3>
+                        <p class="product-description">Vi kan hjälpa er med design, bakgrund, färger och style.</p>
+                        <input class="product-amount-input" type="number" value="1">
+                    </div>
+                    <div class="product-right">
+                        <h3 class="product-price">1000 kr</h3>
+                        <button class="product-remove" type="button">REMOVE</button>
+                    </div>
+                </div>
+                <hr> -->
+                <!-- end of single product -->
+            </div>
+            <div class="total-container">
+                Total: <span class="product-total"></span> kr
+                <p>exclusive Moms</p>
+            </div>
+        </div>
+        <div class="company-info">
+            <h2>Din företags information</h2>
+            <p class="referens_p alert inactive-alert">!</p>
+            <input type="text" id="referens" placeholder="skriv er referens!" required>
+            <p class="company_name_p alert inactive-alert">!</p>
+            <input type="text" id="company_name" placeholder="skriv företagsnamnet!" required>
+            <p class="company_adress_p alert inactive-alert">!</p>
+            <input type="text" id="company_adress" placeholder="skriv företagsadress!" required>
+            <div class="terms">
+                <p class="checkbox_p alert inactive-alert">!</p>
+                <input type="checkbox" id="checkbox"> Jag godkänner alla <a href="vilkor.html" target="_blank">vilkor</a>
+            </div>
+            <div class="btn-faktura-container"><button class="btn-faktura">FAKTURA</button></div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="public/bilder/logo_gul.png" alt="">
+
+            <p class="footer-links">
+                <a href="index.html#home">• Hem</a> |
+                <a href="#omoss">• Om oss</a> |
+                <a href="index.html#tjänster">• Tjänster</a> |
+                <a href="index.html#kontakt">• Kontakt</a>
+            </p>
+
+            <p class="footer-company-name"> © Copy Right</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>
+                        <a href="https://drive.google.com/open?id=1URoOVgFhTwjYvLQN8IHy7lKJaxKsADV2&usp=sharing"
+                            target="_blank" rel="noopener">• Adress: Tulegatan 41, 113 53 Stockholm</a>
+                </span></p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>• Telefon: +46712345678</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="kfcs@kfcs.com"> • Email: info@kfcs.se</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about" id="omoss">
+                <span>• Om Oss</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae temporibus a cupiditate assumenda rerum error suscipit nemo? Sectetur adipisicing elit.</p>
+            <div class="footer-icons">
+                <a href="http://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                <a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

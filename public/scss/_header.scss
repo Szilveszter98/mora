@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:$mainfont-family;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: $mainBlack;
+}
+
+a{
+    color: $TextColor;
+    text-decoration: none;
+}
+
+.header{
+    height: 95vh;
+    /* clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); */
+    background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), $maincolor), url("../bilder/header.jpg");
+    border-bottom: solid #0C0C0C 2px;
+}
+
+.navbarmain{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: 
+    "logo . . home service contact about . . cart";
+    width: 100%;
+    height: 3.5rem;
+    background: $mainBlack;;
+    position: fixed;
+    z-index: 22;
+    font-size: 1.2rem;
+    border-bottom: solid #0C0C0C 2px;
+    top:0;
+}
+
+#header__logo{
+    grid-area: logo;
+    height: 45px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+#header__logo2{
+    grid-area: logo;
+    height: 45px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.header__links{
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    color: $TextColor;
+    
+}
+
+.header__links a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#header__links__home{
+    grid-area: home;
+    /* border-right: solid 2px #0C0C0C; */
+    transition: all .1s ease;
+    padding-top: 13px;
+    
+}
+
+#header__links__home:hover{
+    background: $maincolor;
+    color: $mainBlack;;
+}
+#header__links__service{
+    grid-area: service;
+    /* border-right: solid 2px #0C0C0C; */
+    transition: all .1s ease;
+    padding-top: 13px;
+}
+
+.service__dropdown{
+    display: none;
+    position: absolute;
+    background-color: $maincolor;
+    min-width: 151.5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.service__dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.service__dropdown a:hover{
+    background: $mainBlack;;
+    color: $TextColor;
+}
+
+#header__links__service:hover .service__dropdown{
+display: block;
+}
+
+#header__links__service:hover{
+    background: $maincolor;
+    color: $mainBlack;;
+}
+
+
+
+#header__links__contact{
+    grid-area: contact;
+    /* border-right: solid 2px #0C0C0C; */
+    transition: all .1s ease;
+    padding-top: 13px;
+}
+
+#header__links__contact:hover{
+    background: $maincolor;
+    color: $mainBlack;;
+}
+
+#header__links__about{
+    grid-area: about;   
+    /* border-right: solid 2px #0C0C0C; */
+    transition: all .1s ease;
+    padding-top: 13px;
+}
+#header__links__about:hover{
+    background: $maincolor;
+    color: $mainBlack;;
+}
+
+.header__cart{
+    grid-area: cart;
+    background: $maincolor;
+    list-style: none;
+    text-decoration: none;
+    justify-items: center;
+    text-align: center;
+    height: 3.5rem;
+    border-left: solid 1px #0C0C0C;
+    border-bottom: solid #0C0C0C 2px;
+    padding-top: 13px;
+    transition: all .1s ease;
+}
+
+.header__cart:hover{
+    background: #C49507;
+}
+.cart__dropdown{
+    display: none;
+    position: absolute;
+    background-color: $maincolor;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0%;
+}
+
+#header__cart__dropdown a{
+    color: black;
+}
+
+#header__cart__dropdown:hover .cart__dropdown{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+    ". rubrik rubrik rubrik ."
+    "products products products products products"
+    "products products products products products"
+    "products products products products products"
+    "products products products products products"
+    "products products products products products"
+    "total . . . summa"
+    ". . . checkout checkout";
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+// styles to cart item
+.cart-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap:.3rem;
+    padding: .5rem;
+    margin: .5rem auto;
+}
+.cart-item input{
+    border:none;
+    width:2rem;
+}
+.cart-item button{
+    background: $mainBlack;
+    color: white;
+    border: none;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+// end of styles to cart item
+
+.cart__products{
+    grid-area: products;
+    border-bottom: solid 2px $mainBlack;;
+    border-top: solid 2px $mainBlack;;
+}
+
+
+// ----styles to cart item-----
+.cart-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap:.3rem;
+    padding: .5rem;
+    margin: .5rem auto;
+}
+.cart-item input{
+    border:none;
+    width:2rem;
+}
+.cart-item button{
+    background: $mainBlack;
+    color: white;
+    border: none;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+// -----end of styles to cart item-------
+
+
+#cart__rubrik{
+    font-size: 1.6rem;
+    grid-area: rubrik;
+
+}
+
+#cart__chkout {
+    grid-area: checkout;
+    background: $mainBlack;;
+    border-radius: 15px;
+    color:$TextColor;
+    border: none;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+
+#cart__totalsumma{
+    grid-area: total;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#cart__summa{
+    grid-area: summa;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.navbarmobile{
+    display:none
+}
+
+@media screen and (max-width: 800px){
+    .navbarmain{
+        display: none;
+    }
+
+    .navbarmobile{
+        display: block;
+        position: fixed;
+        background: $mainBlack;
+        width: 100%;
+        z-index: 22;
+        border-bottom: solid black 2px;
+    }
+
+    .mobile__logo{
+        position: absolute;
+        left: 1%;
+        top: 1%;
+    }
+
+    .mobile__links{
+        position: relative;
+        top: 1%;
+        width: 100%;
+        text-align: center;
+    }
+
+    
+
+    #resposive__cart{
+        background: $maincolor;
+        color: black;
+    }
+}
+
+
+@media screen and (max-width: 1110px){
+    .navbarmain{
+        font-size: 0.9rem;
+    }
+}
