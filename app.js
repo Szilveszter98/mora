@@ -14,6 +14,25 @@ function addToCartClicked(event) {
     let button = event.target;
     let shopItem = button.parentElement.parentElement;
     let item = shopItem.querySelector(".card_title").innerText;
+    Storage.getCart();
+    for (i = 0; i < cart.length; i++) {
+        if (item == cart[i].item) {
+            console.log(i);
+            cart[i].amount += 1;
+            Storage.saveCart(cart);
+            let items = document.querySelectorAll(".cart-item-title");
+            for (i = 0; i < items.length; i++) {
+                if (item == items[i].innerHTML) {
+                    let cartitem = items[i].parentElement;
+                    let amount=Number(cartitem.querySelector("input").value);
+                    amount +=1;
+                    cartitem.querySelector("input").value=amount;
+                    uppdateTotal();
+                }
+            }
+            return;
+        }
+    }
     let priceText = shopItem.querySelector(".price_text").innerText;
     let price = Number(priceText.split(" ")[1]);
     let descriptionText = shopItem.querySelector(".card_text").innerText;
@@ -44,7 +63,7 @@ function addItemToCart() {
             cartItemDIV.innerHTML =
                 `<span class="cart-item-title">${element.item}</span>
     <span class="cart-price">${element.price} kr</span>
-    <input class="cart-quantity-input" type="number" min="1" value="1">
+    <input class="cart-quantity-input" type="number" min="1" value="${element.amount}">
     <button class="btn-remove" type="button">REMOVE</button>`
     }
 
@@ -130,4 +149,3 @@ class Storage {
             : [];
     }
 }
-

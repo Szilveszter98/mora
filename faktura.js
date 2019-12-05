@@ -100,3 +100,6 @@ doc.save("viewerPreferences.pdf")
 
 })
 
+window.onbeforeunload = function() {
+    localStorage.clear();
+}
