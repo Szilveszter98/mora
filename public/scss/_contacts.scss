@@ -1,56 +1,72 @@
 /*sytles till kontakt oss section*/
-#kontakt{
-    background:/*$maincolor; */ #FFC10A;
-   padding: 2rem 0 1rem 0;
-   color:#212121;
-}
-/* styles till företags logo*/
-.logo-kontakt img{
-   width:140px;
-   background:#212121;
-   clip-path: ellipse(50% 50% at 50% 50%);
-   position: relative;
-   left:-8rem;
-   top:6rem;
-   transform: rotate(-90deg);
-}
-#kontakt h2{
-   margin-bottom: 1rem;
-}
-#kontakt a{
-   color:#212121;
-   text-decoration: none;
-}
-#kontakt a:hover{
-   color:white;
+
+#kontakt {
+    background: /*$maincolor; */
+    #FFC10A;
+    padding: 2rem 0 1rem 0;
+    color: #212121;
 }
 
-.kontaktForm input,textarea{
-  width:100%;
-  margin-top: 1rem;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 4px 10px;
-  border: 1px solid #ccc;
+
+/* styles till företags logo*/
+
+.logo-kontakt img {
+    width: 140px;
+    background: #212121;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    position: relative;
+    left: -5rem;
+    top: 6rem;
+    transform: rotate(-90deg);
 }
-.btn-ring{
-   margin-top: 1rem;
-   background: /*$mainBlack*/ #212121;
-   color:/*$maincolor*/#FFC10A;
-   border:none;
-   border-radius: 5px;
-   padding: .5rem 1.5rem;
+
+#kontakt h2 {
+    margin-bottom: 1rem;
 }
-.btn-ring:hover{
-   background: rgb(54, 53, 53);
+
+#kontakt a {
+    color: #212121;
+    text-decoration: none;
 }
+
+#kontakt a:hover {
+    color: white;
+}
+
+.kontaktForm input,
+textarea {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+}
+
+.btn-ring {
+    margin-top: 1rem;
+    background: /*$mainBlack*/
+    #212121;
+    color: /*$maincolor*/
+    #FFC10A;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1.5rem;
+}
+
+.btn-ring:hover {
+    background: rgb(54, 53, 53);
+}
+
+
 /* responsive breakpiont for small screen*/
-@media only screen and (max-width:600px){
-   .logo-kontakt img{
-       position: relative;
-       top:0;
-       left: 30%;
-       transform: none;
-       margin-bottom: 1rem;
-   }
+
+@media only screen and (max-width:575px) {
+    .logo-kontakt img {
+        position: relative;
+        top: 0;
+        left: 30%;
+        transform: none;
+        margin-bottom: 1rem;
+    }
 }

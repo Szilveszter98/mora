@@ -12,7 +12,7 @@
 
 .products-container h2 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .product-single {
@@ -60,10 +60,6 @@ hr {
     border-radius: 3px;
 }
 
-.company-info {
-    position: relative;
-}
-
 .company-info input[type=text] {
     display: block;
     border: 1px solid $maincolor;
@@ -71,6 +67,11 @@ hr {
     width: 100%;
     padding: 17px 50px;
     margin-top: 1rem;
+}
+
+.company-info h2 {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .company-info input[type=checkbox] {
@@ -112,6 +113,11 @@ hr {
 .total-container {
     margin: 1.5rem;
     text-align: right;
+    font-weight: 700;
+}
+
+.company-info {
+    position: relative;
 }
 
 .alert {
@@ -150,5 +156,31 @@ hr {
     .product-single img {
         max-width: 50px;
         max-height: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbarmain {
+        display: none;
+    }
+    .navbarmobile {
+        display: block;
+        position: fixed;
+        background: $mainBlack;
+        top: 0%;
+        width: 100%;
+        z-index: 22;
+        border-bottom: solid black 2px;
+    }
+    .mobile__logo {
+        position: absolute;
+        left: 1%;
+        top: 1%;
+    }
+    .mobile__links {
+        position: relative;
+        top: 1%;
+        width: 100%;
+        text-align: center;
     }
 }

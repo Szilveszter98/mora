@@ -3,13 +3,14 @@ let cart = [];
 
 let addToCartButtons = document.querySelectorAll(".card_btn");
 console.log(addToCartButtons)
-// loop alla köp button
+    // loop alla köp button
 for (i = 0; i < addToCartButtons.length; i++) {
     let addToCartbutton = addToCartButtons[i];
     addToCartbutton.addEventListener("click", addToCartClicked);
 }
 
 let product = {};
+
 function addToCartClicked(event) {
     let button = event.target;
     let shopItem = button.parentElement.parentElement;
@@ -24,9 +25,9 @@ function addToCartClicked(event) {
             for (i = 0; i < items.length; i++) {
                 if (item == items[i].innerHTML) {
                     let cartitem = items[i].parentElement;
-                    let amount=Number(cartitem.querySelector("input").value);
-                    amount +=1;
-                    cartitem.querySelector("input").value=amount;
+                    let amount = Number(cartitem.querySelector("input").value);
+                    amount += 1;
+                    cartitem.querySelector("input").value = amount;
                     uppdateTotal();
                 }
             }
@@ -61,7 +62,7 @@ function addItemToCart() {
     for (const element of cart) {
         for (const property in element)
             cartItemDIV.innerHTML =
-                `<span class="cart-item-title">${element.item}</span>
+            `<span class="cart-item-title">${element.item}</span>
     <span class="cart-price">${element.price} kr</span>
     <input class="cart-quantity-input" type="number" min="1" value="${element.amount}">
     <button class="btn-remove" type="button">REMOVE</button>`
@@ -119,8 +120,7 @@ function uppdateAmount(event) {
     let cart = Storage.getCart();
     for (i = 0; i < cart.length; i++) {
         if (cart[i].item == item) {
-            if (amount <= 0) { alert("Amount måste större än 0") }
-            else { cart[i].amount = amount; }
+            if (amount <= 0) { alert("Amount måste större än 0") } else { cart[i].amount = amount; }
         }
     }
     Storage.saveCart(cart);
@@ -144,8 +144,8 @@ class Storage {
         localStorage.setItem("cart", JSON.stringify(cart));
     }
     static getCart() {
-        return localStorage.getItem("cart")
-            ? JSON.parse(localStorage.getItem("cart"))
-            : [];
+        return localStorage.getItem("cart") ?
+            JSON.parse(localStorage.getItem("cart")) :
+            [];
     }
 }

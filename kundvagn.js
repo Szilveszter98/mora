@@ -109,11 +109,12 @@ function uppdateCompanyInfo() {
     const company_name_p = document.querySelector('.company_name_p');
     let companyAdress = document.querySelector("#company_adress").value;
     const company_adress_p = document.querySelector('.company_adress_p');
-    const checkBox = document.querySelector("#checkbox").checked;
+    let checkBox = document.querySelector("#checkbox").checked;
     const checkBox_p = document.querySelector('.checkbox_p');
 
-
     let kundInfo = [];
+
+
 
 
     if (referens && companyName && companyAdress && checkBox) {
@@ -135,10 +136,7 @@ function uppdateCompanyInfo() {
         removeClassWithDelay(company_adress_p, 300, 1800)
         removeClassWithDelay(checkBox_p, 450, 1950)
     }
-
 }
-
-
 
 function removeClassWithDelay(el, delaytime, time) {
     setTimeout(() => {
