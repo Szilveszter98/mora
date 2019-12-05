@@ -14,7 +14,7 @@ function showCart() {
             <div class="product-center">
                 <h3 class="product-title">${element.item}</h3>
                 <p class="product-description">${element.description}</p>
-                <input class="product-amount-input" type="number" value="${element.amount}">
+                <input class="product-amount-input" type="number" min="1" value="${element.amount}">
             </div>
             <div class="product-right">
                 <h3 class="product-price">${element.price} kr</h3>
