@@ -32,6 +32,13 @@ function showCart() {
         removeButton.addEventListener("click", removeClicked);
         console.log(i);
     }
+    let amountInputs = productLista.querySelectorAll(".product-amount-input");
+    console.log(amountInputs);
+    for (i = 0; i < amountInputs.length; i++) {
+        let amountInput = amountInputs[i];
+        console.log(amountInput);
+        amountInput.addEventListener("change", uppdateAmount);
+    }
 }
 
 function removeClicked(event) {
@@ -51,6 +58,23 @@ function removeClicked(event) {
     uppdateTotal();
 }
 
+function uppdateAmount(event) {
+    console.log("hejhej");
+    let amountInput = event.target;
+    let changeItem = amountInput.parentElement;
+    let amount = changeItem.querySelector("input").value;
+    let item = changeItem.querySelector(".product-title").innerText;
+    let cart = Storage.getCart();
+    for (i = 0; i < cart.length; i++) {
+        if (cart[i].item == item) {
+            if (amount <= 0) { alert("Amount måste större än 0") }
+            else { cart[i].amount = amount; }
+        }
+    }
+    Storage.saveCart(cart);
+    uppdateTotal();
+}
+
 function uppdateTotal() {
     let total = 0;
     console.log("hej");
@@ -64,6 +88,16 @@ function uppdateTotal() {
     let productTotal = document.querySelector(".product-total");
     productTotal.innerHTML = total;
     localStorage.setItem("total", JSON.stringify(total));
+    if (total == 0) {
+        btnFaktura.disabled = true
+        btnFaktura.innerHTML = "Inga Tjänster"
+        console.log("Disabled")
+
+    } else {
+        btnFaktura.disabled = false
+        console.log("abled")
+        btnFaktura.innerHTML = "Faktura"
+    }
 }
 
 
