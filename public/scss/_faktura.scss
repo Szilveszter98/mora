@@ -14,7 +14,7 @@
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: .15);
     .head{
         padding: 4vh 1vw;
-        background:$maincolor;
+        background:$maincolor !important;
         color:$mainBlack;
         letter-spacing: 3px;
     }
