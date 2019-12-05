@@ -10,7 +10,7 @@
    background:#212121;
    clip-path: ellipse(50% 50% at 50% 50%);
    position: relative;
-   left:-8rem;
+   left:-5rem;
    top:6rem;
    transform: rotate(-90deg);
 }
@@ -45,12 +45,13 @@
    background: rgb(54, 53, 53);
 }
 /* responsive breakpiont for small screen*/
-@media only screen and (max-width:600px){
+@media only screen and (max-width:575px){
    .logo-kontakt img{
        position: relative;
        top:0;
        left: 30%;
        transform: none;
        margin-bottom: 1rem;
+
    }
 }

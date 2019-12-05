@@ -27,13 +27,16 @@
     <header>
         <div class="toolbar hidden-print">
             <div class="text-right">
-                <button id="printFaktura" class="btn-print"><i class="fa fa-print"></i> Skriva ut</button>
-                <button class="btn-pdf"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
+                <button id="printFaktura" class="btn-print" onclick="printDiv('printableArea')">  <i class="fa fa-print"></i> Skriva ut</button>
+                <button class="btn-pdf" id="submit" ><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
+                <div id="print-btn"></div>
+
             </div>
         </div>
     </header>
     <hr>
     <!-- Faktura -->
+    <div id="printableArea">
     <div class="faktura overflow-auto">
         <table class="table table-borderless">
             <tr class="head">
@@ -154,6 +157,9 @@
         </section>
         <div></div>
     </div>
+</div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
