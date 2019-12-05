@@ -47,12 +47,24 @@ a{
     padding-left: 5px;
 }
 
+#header__logo2{
+    grid-area: logo;
+    height: 45px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
 .header__links{
     list-style: none;
     text-decoration: none;
     text-align: center;
     color: $TextColor;
     
+}
+
+.header__links a:hover{
+    text-decoration: none;
+    color: black;
 }
 
 #header__links__home{
@@ -293,5 +305,12 @@ display: block;
     #resposive__cart{
         background: $maincolor;
         color: black;
+    }
+}
+
+
+@media screen and (max-width: 1110px){
+    .navbarmain{
+        font-size: 0.9rem;
     }
 }
