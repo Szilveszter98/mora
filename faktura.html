@@ -12,14 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
-<<<<<<< HEAD
-    <script src="app.js" defer></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
-    
-=======
     <script src="faktura.js" defer></script>
->>>>>>> f4d07b70409dc936997d855de36b7c875d17ff22
     <style>
         html {
             scroll-behavior: smooth;
@@ -46,7 +39,7 @@
     <!-- Faktura -->
     <div id="printableArea">
     <div class="faktura overflow-auto">
-        <table class="table table-borderless">
+        <table  style="background-color: #FFC10A!important;" class="table table-borderless">
             <tr class="head">
                 <td>
                     <h1 style="font-size: 4rem;">Faktura</h1>
@@ -58,35 +51,6 @@
 
         </table>
         <!-- kunder info -->
-<<<<<<< HEAD
-        <section class="container kundInfo">
-            <table class="table table-borderless kundInfo_table">
-                <tr>
-                    <td>Faktura till</td>
-                    <td>Fakturadatum</td>
-                    <td>Plusgironr.</td>
-                    <td class="alignR">Totalt summan</td>
-                </tr>
-                <tr class="lineHight">
-                    <td class="kunderNamn">Kunders namn</td>
-                    <td class="fakturaDatum"></td>
-                    <td>1234567-8</td>
-                    <td class="summan alignR">25000 kr</td>
-                </tr>
-                <tr>
-                    <td class="kunderAddress" rowspan="2">kunders address Stad,<br> Stan, Land Postnummer</td>
-                    <td>Förfallodatum</td>
-                    <td>Bankgironr</td>
-                    <td class="alignR">Kundnummer</td>
-                </tr>
-                <tr>
-                    <td class="forfalloDatum"></td>
-                    <td>123-4667</td>
-                    <td class="kundnummer alignR">12345</td>
-                </tr>
-            </table>
-        </section>
-=======
         <section class="container kundInfo-container">
             <div class="kundInfo">
                 <div>
@@ -119,7 +83,6 @@
             </div>
         </section>
         <!-- End of kunder info -->
->>>>>>> f4d07b70409dc936997d855de36b7c875d17ff22
         <!-- product och pris lista -->
         <section class="container">
             <table class="table table-border-top">
