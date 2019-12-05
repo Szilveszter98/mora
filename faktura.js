@@ -79,3 +79,6 @@ const fakturaContent = document.querySelector(".faktura");
 printFaktura.addEventListener("click", () => { window.print(fakturaContent) });
 
 
+window.onbeforeunload = function() {
+    localStorage.clear();
+}
