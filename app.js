@@ -119,7 +119,6 @@ function removeClicked(event) {
 
 
 
-
     Storage.saveCart(cart);
     removeItem.remove();
     uppdateTotal();
