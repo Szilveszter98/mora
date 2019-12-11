@@ -1,3 +1,4 @@
+
 // button styles
 .btn-print, 
 .btn-pdf{
@@ -71,17 +72,31 @@
     }
 }
 // styles till print sida
+
+
+
 @media print{
-    .faktura{
-        font-size: 11px!important;
-        overflow: hidden!important;
+    
+    
+    body, html, #wrapper {
+        width: 80%;
+        page-break-after:always;
+        overflow: visible !important;
+    
     }
-    .firma{
+
+    #printableArea{
         position: absolute;
-        bottom: 10px;
-        page-break-after:always;
+        float: left;
+        height: auto;
+        width: 100% !important;
+        padding: 0px;
+        font-size: small;
+
     }
-    .faktura>div:last-child{
-        page-break-after:always;
+    .kundInfo-container{
+        margin:1px;
+        padding:0px;
     }
 }
+

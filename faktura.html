@@ -13,6 +13,12 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
     <script src="faktura.js" defer></script>
+    
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+     <script src="https://unpkg.com/html2canvas@1.0.0-alpha.12/dist/html2canvas.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -25,25 +31,23 @@
 
 <body>
     <header>
-        <div class="toolbar hidden-print">
+        <div class="toolbar hidden-print" data-html2canvas-ignore="true">
             <div class="text-right">
-                <button id="printFaktura" class="btn-print" onclick="printDiv('printableArea')">  <i class="fa fa-print"></i> Skriva ut</button>
-                <button class="btn-pdf" id="submit" ><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
-                <div id="print-btn"></div>
-
+                <button class="btn-pdf" id="pdf" ><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
             </div>
         </div>
     </header>
     <hr>
     <!-- Faktura -->
+ 
     <div id="printableArea">
-    <div class="faktura overflow-auto">
+    <div class="faktura overflow-auto" id="printIT">
         <table class="table table-borderless">
             <tr class="head">
                 <td>
                     <h1 style="font-size: 4rem;">Faktura</h1>
                 </td>
-                <td class="faktura-logo">
+                <td class="faktura-logo" data-html2canvas-ignore="true">
                     <img src="public/bilder/logo3.png" id="logo" alt="firma logo">
                 </td>
             </tr>
@@ -158,7 +162,7 @@
         <div></div>
     </div>
 </div>
-
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
