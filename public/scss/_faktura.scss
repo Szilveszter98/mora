@@ -69,34 +69,13 @@
     
     .firma{
         margin-top: 2rem;
+      
     }
 }
-// styles till print sida
 
 
 
-@media print{
-    
-    
-    body, html, #wrapper {
-        width: 80%;
-        page-break-after:always;
-        overflow: visible !important;
-    
-    }
 
-    #printableArea{
-        position: absolute;
-        float: left;
-        height: auto;
-        width: 100% !important;
-        padding: 0px;
-        font-size: small;
 
-    }
-    .kundInfo-container{
-        margin:1px;
-        padding:0px;
-    }
-}
+
 

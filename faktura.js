@@ -76,12 +76,15 @@ class Storage {
 
 /*Download direkt pdf*/ 
 
- function getpdf() {
-    var pdf = new jsPDF('p', 'mm', "a4");
+  function getpdf() {
+    var pdf = new jsPDF('l', 'pt', 'a4');
+    
     pdf.addHTML(document.body, function() {
-      pdf.save('web.pdf');
-      pdf
+    
+      pdf.save('faktura.pdf');
+      
     });
 }
     
 document.getElementById("pdf").addEventListener("click", getpdf);
+ 

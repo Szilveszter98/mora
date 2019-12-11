@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "^4.0.2",
+    "html2canvas": "^1.0.0-rc.5",
     "jspdf": "^1.5.3"
   },
   "devDependencies": {
