@@ -21,7 +21,9 @@
 <body>
     <!-- navbar -->
     <ul class="navbarmain">
-        <li><a href="index.html"><img class="header__menu__logo" id="header__logo" src="public/bilder/logogul.png" alt=""></a></li>
+        <li>
+            <a href="index.html"><img class="header__menu__logo" id="header__logo" src="public/bilder/logogul.png" alt=""></a>
+        </li>
         <li class="header__links" id="header__links__home"><a href="index.html#header">Hem</a></li>
         <li class="header__links" id="header__links__service"><a href="index.html#tjänster">Tjänster</a>
             <div class="service__dropdown">
@@ -37,14 +39,16 @@
         <li class="header__links" id="header__links__about"><a href="#omoss">Om Oss</a></li>
     </ul>
     <ul class="navbarmobile" id="myMobileNav">
-        
-        <li class="mobile__logo"><a href="index.html"><img src="public/bilder/logogul.png" alt="" class="header__menu__logo" id="header__logo2"></a></li>
+
+        <li class="mobile__logo">
+            <a href="index.html"><img src="public/bilder/logogul.png" alt="" class="header__menu__logo" id="header__logo2"></a>
+        </li>
         <li class="mobile__links"><a href="index.html" id="mobile__home">Hem</a></li>
         <li class="mobile__links"><a href="index.html#tjänster" id="mobile__service">Tjänster</a></li>
-        <li class="mobile__links" ><a href="index.html#kontakt" id="mobile__contact">Kontakta Oss</a></li>
-        <li class="mobile__links" ><a href="#omoss" id="mobile__about">Om Oss</a></li>
-        
-          
+        <li class="mobile__links"><a href="index.html#kontakt" id="mobile__contact">Kontakta Oss</a></li>
+        <li class="mobile__links"><a href="#omoss" id="mobile__about">Om Oss</a></li>
+
+
     </ul>
 
     <!-- cart view -->
@@ -75,12 +79,15 @@
         </div>
         <div class="company-info">
             <h2>Din företags information</h2>
+            <p class="referens_p alert inactive-alert">!</p>
             <input type="text" id="referens" placeholder="skriv er referens!" required>
+            <p class="company_name_p alert inactive-alert">!</p>
             <input type="text" id="company_name" placeholder="skriv företagsnamnet!" required>
+            <p class="company_adress_p alert inactive-alert">!</p>
             <input type="text" id="company_adress" placeholder="skriv företagsadress!" required>
             <div class="terms">
-                <input type="checkbox" id="checkbox"> Jag godkänner alla <a href="vilkor.html"
-                    target="_blank">vilkor</a>
+                <p class="checkbox_p alert inactive-alert">!</p>
+                <input type="checkbox" id="checkbox"> Jag godkänner alla <a href="vilkor.html" target="_blank">vilkor</a>
             </div>
             <div class="btn-faktura-container"><button class="btn-faktura">FAKTURA</button></div>
         </div>
@@ -93,12 +100,9 @@
             <img src="public/bilder/logo_gul.png" alt="">
 
             <p class="footer-links">
-                <a href="index.html#home">• Hem</a>
-                |
-                <a href="#omoss">• Om oss</a>
-                |
-                <a href="index.html#tjänster">• Tjänster</a>
-                |
+                <a href="index.html#home">• Hem</a> |
+                <a href="#omoss">• Om oss</a> |
+                <a href="index.html#tjänster">• Tjänster</a> |
                 <a href="index.html#kontakt">• Kontakt</a>
             </p>
 
@@ -125,11 +129,7 @@
         </div>
         <div class="footer-right">
             <p class="footer-company-about" id="omoss">
-                <span>• Om Oss</span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae
-                temporibus
-                a cupiditate assumenda rerum error suscipit nemo?
-                Sectetur adipisicing elit.</p>
+                <span>• Om Oss</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. A quaerat, laborum minus debitis repudiandae temporibus a cupiditate assumenda rerum error suscipit nemo? Sectetur adipisicing elit.</p>
             <div class="footer-icons">
                 <a href="http://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
                 <a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a>

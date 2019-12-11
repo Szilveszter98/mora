@@ -7,10 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
     <script src="faktura.js" defer></script>
     
@@ -23,6 +21,7 @@
         html {
             scroll-behavior: smooth;
         }
+        
         body {
             background: white;
         }
@@ -158,8 +157,116 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
-        <div></div>
+            <!-- kunder info -->
+            <section class="container kundInfo-container">
+                <div class="kundInfo">
+                    <div>
+                        <h6>Faktura till</h6>
+                        <h3 class="kunderNamn">Kunders namn </h3>
+                        <h6>kunders referens:</h6>
+                        <p class="kunder-referens"></p>
+                        <h6>kunders address:</h6><address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
+                    </div>
+                    <div>
+                        <h6>Kundnummer:</h6>
+                        <p class="kundnummer"></p>
+                        <h6>Fakturadatum:</h6>
+                        <p class="fakturaDatum"></p>
+                        <h6>Förfallodatum:</h6>
+                        <p class="forfalloDatum"></p>
+                    </div>
+                    <div>
+                        <h6>Plusgironr.</h6>
+                        <p>1234567-8</p>
+                        <h6>Bankgironr.</h6>
+                        <p>123-4667</p>
+                    </div>
+                    <div class="alignR">
+                        <h6>Totalt summan</h6>
+                        <h1 class="summan summan-top"></h1>
+                        <br><br><br>
+                        <h6>Fakturanummer</h6>
+                        <p class="fakturaNummer"></p>
+                    </div>
+                </div>
+            </section>
+            <!-- End of kunder info -->
+            <!-- product och pris lista -->
+            <section class="container">
+                <table class="table table-border-top">
+                    <thead>
+                        <tr>
+                            <th scope="col">Beskrivning</th>
+                            <th scope="col">Antal</th>
+                            <th scope="col">Enhet</th>
+                            <th scope="col">Pris</th>
+                            <th scope="col">Moms</th>
+                            <th scope="col">Moms kr</th>
+                            <th scope="col">Belopp</th>
+                        </tr>
+                    </thead>
+                    <tbody class="prolist">
+                        <tr>
+                            <td>Apputveckling</td>
+                            <td>1</td>
+                            <td>st</td>
+                            <td>10000 kr</td>
+                            <td>25%</td>
+                            <td>2500 kr</td>
+                            <td>12500 kr</td>
+                        </tr>
+                    </tbody>
+                    <!-- summan av faktura -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Belopp före moms:</td>
+                            <td class="summaForeMoms"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Total moms:</td>
+                            <td class="totalMoms"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">Summa att betala:</td>
+                            <td class="summan summan-table"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            <!-- faktura footer, firma info -->
+            <section class="container firma">
+                <table class="table table-sm table-borderless table-border-top">
+                    <thead>
+                        <tr>
+                            <th>KFCS AB</th>
+                            <th>Kontaktuppgifter</th>
+                            <th>Betalningsuppfigter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tulegatan 41, 113 53</td>
+                            <td>Matthias Johansson</td>
+                            <td>Plusgironr: 1234567-8</td>
+                        </tr>
+                        <tr>
+                            <td>Stockholm, Sweden</td>
+                            <td>Epost:info@kfcs.se</td>
+                            <td>Bankgironr: 123-4567</td>
+                        </tr>
+                        <tr>
+                            <td>org.nr 123456-6789</td>
+                            <td>Tel +46712345678</td>
+                            <td>IBAN: SE1234567890</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div></div>
+        </div>
     </div>
 </div>
    

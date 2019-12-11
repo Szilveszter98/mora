@@ -1,8 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", showCart)
 let productLista = document.querySelector(".product-lista");
 
 console.log("hej från kundvang")
+document.addEventListener("DOMContentLoaded", disableFakturaBtn);
 
 function showCart() {
     let result = "";
@@ -14,7 +14,7 @@ function showCart() {
             <div class="product-center">
                 <h3 class="product-title">${element.item}</h3>
                 <p class="product-description">${element.description}</p>
-                <input class="product-amount-input" type="number" value="${element.amount}">
+                <input class="product-amount-input" type="number" min="1" value="${element.amount}">
             </div>
             <div class="product-right">
                 <h3 class="product-price">${element.price} kr</h3>
@@ -24,8 +24,8 @@ function showCart() {
         <hr>`
     }
     productLista.innerHTML = result;
-    let productTotal=document.querySelector(".product-total");
-    productTotal.innerHTML=JSON.parse(localStorage.getItem("total"));
+    let productTotal = document.querySelector(".product-total");
+    productTotal.innerHTML = JSON.parse(localStorage.getItem("total"));
     let removeButtons = productLista.querySelectorAll(".product-remove");
     for (i = 0; i < removeButtons.length; i++) {
         let removeButton = removeButtons[i];
@@ -47,7 +47,7 @@ function removeClicked(event) {
     let removeItem = removeButton.parentElement.parentElement;
     let item = removeItem.querySelector(".product-title").innerText;
     let cart = Storage.getCart();
-    for (i=0; i<cart.length; i++) {
+    for (i = 0; i < cart.length; i++) {
         if (cart[i].item == item) {
             console.log(i);
             cart.splice(i, 1);
@@ -67,8 +67,7 @@ function uppdateAmount(event) {
     let cart = Storage.getCart();
     for (i = 0; i < cart.length; i++) {
         if (cart[i].item == item) {
-            if (amount <= 0) { alert("Amount måste större än 0") }
-            else { cart[i].amount = amount; }
+            if (amount <= 0) { alert("Amount måste större än 0") } else { cart[i].amount = amount; }
         }
     }
     Storage.saveCart(cart);
@@ -88,15 +87,16 @@ function uppdateTotal() {
     let productTotal = document.querySelector(".product-total");
     productTotal.innerHTML = total;
     localStorage.setItem("total", JSON.stringify(total));
+    // disableFakturaBtn(total)
     if (total == 0) {
         btnFaktura.disabled = true
-        btnFaktura.innerHTML = "Inga Tjänster"
+        btnFaktura.innerHTML = "INGA TJÄNSTER"
         console.log("Disabled")
 
     } else {
         btnFaktura.disabled = false
         console.log("abled")
-        btnFaktura.innerHTML = "Faktura"
+        btnFaktura.innerHTML = "FAKTURA"
     }
 }
 
@@ -106,15 +106,66 @@ btnFaktura.addEventListener("click", uppdateCompanyInfo)
 
 function uppdateCompanyInfo() {
     let referens = document.querySelector("#referens").value;
+    const referens_p = document.querySelector('.referens_p');
     let companyName = document.querySelector("#company_name").value;
+    const company_name_p = document.querySelector('.company_name_p');
     let companyAdress = document.querySelector("#company_adress").value;
-    let kundInfo=[];
-    kundInfo = [referens, companyName, companyAdress];
-    localStorage.setItem("kundInfo", JSON.stringify(kundInfo));
-    window.document.location = "./faktura.html";
+    const company_adress_p = document.querySelector('.company_adress_p');
+    let checkBox = document.querySelector("#checkbox").checked;
+    const checkBox_p = document.querySelector('.checkbox_p');
+
+    let kundInfo = [];
+
+
+
+
+    if (referens && companyName && companyAdress && checkBox) {
+        kundInfo = [referens, companyName, companyAdress];
+        localStorage.setItem("kundInfo", JSON.stringify(kundInfo));
+        window.document.location = "./faktura.html";
+        // showing alert individual alert message
+    } else if (!referens && companyName && companyAdress && checkBox) {
+        removeClassWithDelay(referens_p, 0, 1500)
+    } else if (referens && !companyName && companyAdress && checkBox) {
+        removeClassWithDelay(company_name_p, 0, 1500)
+    } else if (referens && companyName && !companyAdress && checkBox) {
+        removeClassWithDelay(company_adress_p, 0, 1500);
+    } else if (referens && companyName && companyAdress && !checkBox) {
+        removeClassWithDelay(checkBox_p, 0, 1500)
+    } else {
+        removeClassWithDelay(referens_p, 0, 1500)
+        removeClassWithDelay(company_name_p, 150, 1650)
+        removeClassWithDelay(company_adress_p, 300, 1800)
+        removeClassWithDelay(checkBox_p, 450, 1950)
+    }
 }
 
+function removeClassWithDelay(el, delaytime, time) {
+    setTimeout(() => {
+        el.classList.add('active-alert')
+    }, delaytime);
+    setTimeout(() => {
+        el.classList.remove('active-alert')
+    }, time);
+}
 
+// function disableFakturaBtn(total) {
+// if (productLista.hasChildNodes() || total !== 0) {
+
+// }
+
+
+function disableFakturaBtn() {
+    if (productLista.hasChildNodes()) {
+        btnFaktura.disabled = false
+        btnFaktura.innerHTML = "FAKTURA"
+        console.log("enabled")
+    } else {
+        btnFaktura.disabled = true
+        console.log("disabled")
+        btnFaktura.innerHTML = "INGA TJÄNSTER"
+    }
+}
 
 
 class Storage {
@@ -122,9 +173,7 @@ class Storage {
         localStorage.setItem("cart", JSON.stringify(cart));
     }
     static getCart() {
-        return localStorage.getItem("cart")
-            ? JSON.parse(localStorage.getItem("cart"))
-            : [];
+        return localStorage.getItem("cart") ?
+            JSON.parse(localStorage.getItem("cart")) : [];
     }
 }
-
