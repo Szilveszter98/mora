@@ -23,6 +23,35 @@ a{
     /* clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%); */
     background: linear-gradient(to right,rgba(0.4, 0.4, 0.4, 0.4), $maincolor), url("../bilder/header.jpg");
     border-bottom: solid #0C0C0C 2px;
+    z-index: -2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .hero{
+        padding: 1vh 2vw;
+        text-align: end;
+        color:$mainBlack;
+        font-family: Titillium Web,Lucida Grande,Lucida Sans,sans-serif;
+    }
+    h1{
+        margin:0.5vh auto 1.5vh auto;
+        font-size: 3.5rem;
+    }
+    a{
+        text-decoration: none;
+    }
+    button{
+        padding: .8rem 3rem;
+        color: $maincolor;
+        background: $mainBlack;
+        border: none;
+        margin-top: 1rem auto;
+        border-radius: 5px;
+    }
+    p{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
 }
 
 .navbarmain{
@@ -34,7 +63,7 @@ a{
     height: 3.5rem;
     background: $mainBlack;;
     position: fixed;
-    z-index: 22;
+    z-index: 2;
     font-size: 1.2rem;
     border-bottom: solid #0C0C0C 2px;
     top:0;
@@ -277,7 +306,9 @@ display: block;
     .navbarmain{
         display: none;
     }
-
+    .header{
+        height: 70vh;
+    }
     .navbarmobile{
         display: block;
         position: fixed;
@@ -286,7 +317,6 @@ display: block;
         z-index: 22;
         border-bottom: solid black 2px;
     }
-
     .mobile__logo{
         position: absolute;
         left: 1%;
@@ -299,12 +329,22 @@ display: block;
         width: 100%;
         text-align: center;
     }
-
-    
-
     #resposive__cart{
         background: $maincolor;
         color: black;
+    }
+    .hero{
+        margin-top:10vh;
+        h1{
+        margin:0.5vh auto 1.5vh auto;
+        font-size: 2.5rem;
+        }
+        p{
+        font-size: 1rem;
+        }
+        button{
+        padding: .4rem 1.3rem;
+        }
     }
 }
 
