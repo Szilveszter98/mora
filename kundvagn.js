@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", showCart)
 let productLista = document.querySelector(".product-lista");
 
 console.log("hej från kundvang")
+document.addEventListener("DOMContentLoaded", disableFakturaBtn);
 
 function showCart() {
     let result = "";
@@ -86,6 +87,7 @@ function uppdateTotal() {
     let productTotal = document.querySelector(".product-total");
     productTotal.innerHTML = total;
     localStorage.setItem("total", JSON.stringify(total));
+    // disableFakturaBtn(total)
     if (total == 0) {
         btnFaktura.disabled = true
         btnFaktura.innerHTML = "INGA TJÄNSTER"
@@ -147,6 +149,23 @@ function removeClassWithDelay(el, delaytime, time) {
     }, time);
 }
 
+// function disableFakturaBtn(total) {
+// if (productLista.hasChildNodes() || total !== 0) {
+
+// }
+
+
+function disableFakturaBtn() {
+    if (productLista.hasChildNodes()) {
+        btnFaktura.disabled = false
+        btnFaktura.innerHTML = "FAKTURA"
+        console.log("enabled")
+    } else {
+        btnFaktura.disabled = true
+        console.log("disabled")
+        btnFaktura.innerHTML = "INGA TJÄNSTER"
+    }
+}
 
 
 class Storage {

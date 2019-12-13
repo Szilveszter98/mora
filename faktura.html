@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/dist/main.css">
     <script src="faktura.js" defer></script>
+    
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -24,141 +30,139 @@
 
 <body>
     <header>
-        <div class="toolbar hidden-print">
+        <div class="toolbar hidden-print" data-html2canvas-ignore="true">
             <div class="text-right">
-                <button id="printFaktura" class="btn-print" onclick="printDiv('printableArea')">  <i class="fa fa-print"></i> Skriva ut</button>
-                <button class="btn-pdf" id="submit"><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
-                <div id="print-btn"></div>
-
+                <button class="btn-pdf" id="pdf" ><i class="fa fa-file-pdf"></i>     Ladda ner som PDF</button>
             </div>
         </div>
     </header>
     <hr>
     <!-- Faktura -->
+ 
     <div id="printableArea">
-        <div class="faktura overflow-auto">
-            <table class="table table-borderless">
-                <tr class="head">
-                    <td>
-                        <h1 style="font-size: 4rem;">Faktura</h1>
-                    </td>
-                    <td class="faktura-logo">
-                        <img src="public/bilder/logo3.png" id="logo" alt="firma logo">
-                    </td>
-                </tr>
-            </table>
-            <!-- kunder info -->
-            <section class="container kundInfo-container">
-                <div class="kundInfo">
-                    <div>
-                        <h6>Faktura till</h6>
-                        <h3 class="kunderNamn">Kunders namn </h3>
-                        <h6>kunders referens:</h6>
-                        <p class="kunder-referens"></p>
-                        <h6>kunders address:</h6><address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
-                    </div>
-                    <div>
-                        <h6>Kundnummer:</h6>
-                        <p class="kundnummer"></p>
-                        <h6>Fakturadatum:</h6>
-                        <p class="fakturaDatum"></p>
-                        <h6>Förfallodatum:</h6>
-                        <p class="forfalloDatum"></p>
-                    </div>
-                    <div>
-                        <h6>Plusgironr.</h6>
-                        <p>1234567-8</p>
-                        <h6>Bankgironr.</h6>
-                        <p>123-4667</p>
-                    </div>
-                    <div class="alignR">
-                        <h6>Totalt summan</h6>
-                        <h1 class="summan summan-top"></h1>
-                        <br><br><br>
-                        <h6>Fakturanummer</h6>
-                        <p class="fakturaNummer"></p>
-                    </div>
+    <div class="faktura overflow-auto" id="printIT">
+        <table class="table table-borderless">
+            <tr class="head">
+                <td>
+                    <h1 style="font-size: 4rem;">Faktura</h1>
+                </td>
+                <td class="faktura-logo" data-html2canvas-ignore="true">
+                    <img src="public/bilder/logo3.png" id="logo" alt="firma logo">
+                </td>
+            </tr>
+        </table>
+        <!-- kunder info -->
+        <section class="container kundInfo-container">
+            <div class="kundInfo">
+                <div>
+                    <h6>Faktura till</h6>
+                    <h3 class="kunderNamn">Kunders namn </h3>
+                    <h6>kunders referens:</h6><p class="kunder-referens"></p>
+                    <h6>kunders address:</h6><address class="kunderAddress">1 kunders address Stad, Stan, Land Postnummer</address>
                 </div>
-            </section>
-            <!-- End of kunder info -->
-            <!-- product och pris lista -->
-            <section class="container">
-                <table class="table table-border-top">
-                    <thead>
-                        <tr>
-                            <th scope="col">Beskrivning</th>
-                            <th scope="col">Antal</th>
-                            <th scope="col">Enhet</th>
-                            <th scope="col">Pris</th>
-                            <th scope="col">Moms</th>
-                            <th scope="col">Moms kr</th>
-                            <th scope="col">Belopp</th>
-                        </tr>
-                    </thead>
-                    <tbody class="prolist">
-                        <tr>
-                            <td>Apputveckling</td>
-                            <td>1</td>
-                            <td>st</td>
-                            <td>10000 kr</td>
-                            <td>25%</td>
-                            <td>2500 kr</td>
-                            <td>12500 kr</td>
-                        </tr>
-                    </tbody>
-                    <!-- summan av faktura -->
-                    <tfoot>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td colspan="2">Belopp före moms:</td>
-                            <td class="summaForeMoms"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td colspan="2">Total moms:</td>
-                            <td class="totalMoms"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td colspan="2">Summa att betala:</td>
-                            <td class="summan summan-table"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
-            <!-- faktura footer, firma info -->
-            <section class="container firma">
-                <table class="table table-sm table-borderless table-border-top">
-                    <thead>
-                        <tr>
-                            <th>KFCS AB</th>
-                            <th>Kontaktuppgifter</th>
-                            <th>Betalningsuppfigter</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tulegatan 41, 113 53</td>
-                            <td>Matthias Johansson</td>
-                            <td>Plusgironr: 1234567-8</td>
-                        </tr>
-                        <tr>
-                            <td>Stockholm, Sweden</td>
-                            <td>Epost:info@kfcs.se</td>
-                            <td>Bankgironr: 123-4567</td>
-                        </tr>
-                        <tr>
-                            <td>org.nr 123456-6789</td>
-                            <td>Tel +46712345678</td>
-                            <td>IBAN: SE1234567890</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                    <h6>Kundnummer:</h6>
+                    <p class="kundnummer"></p>
+                    <h6>Fakturadatum:</h6>
+                    <p class="fakturaDatum"></p>
+                    <h6>Förfallodatum:</h6>
+                    <p class="forfalloDatum"></p>
+                </div>
+                <div>
+                    <h6>Plusgironr.</h6>
+                    <p>1234567-8</p>
+                    <h6>Bankgironr.</h6>
+                    <p>123-4667</p>
+                </div>
+                <div class="alignR">
+                    <h6>Totalt summan</h6>
+                    <h1 class="summan summan-top"></h1>
+                    <br><br><br>
+                    <h6>Fakturanummer</h6>
+                    <p class="fakturaNummer"></p>
+                </div>
+            </div>
+        </section>
+        <!-- End of kunder info -->
+        <!-- product och pris lista -->
+        <section class="container">
+            <table class="table table-border-top">
+                <thead>
+                    <tr>
+                        <th scope="col">Beskrivning</th>
+                        <th scope="col">Antal</th>
+                        <th scope="col">Enhet</th>
+                        <th scope="col">Pris</th>
+                        <th scope="col">Moms</th>
+                        <th scope="col">Moms kr</th>
+                        <th scope="col">Belopp</th>
+                    </tr>
+                </thead>
+                <tbody class="prolist">
+                    <tr>
+                        <td>Apputveckling</td>
+                        <td>1</td>
+                        <td>st</td>
+                        <td>10000 kr</td>
+                        <td>25%</td>
+                        <td>2500 kr</td>
+                        <td>12500 kr</td>
+                    </tr>
+                </tbody>
+                <!-- summan av faktura -->
+                <tfoot>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td colspan="2">Belopp före moms:</td>
+                        <td class="summaForeMoms"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td colspan="2">Total moms:</td>
+                        <td class="totalMoms"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td colspan="2">Summa att betala:</td>
+                        <td class="summan summan-table"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <!-- faktura footer, firma info -->
+        <section class="container firma">
+            <table class="table table-sm table-borderless table-border-top">
+                <thead>
+                    <tr>
+                        <th>KFCS AB</th>
+                        <th>Kontaktuppgifter</th>
+                        <th>Betalningsuppfigter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tulegatan 41, 113 53</td>
+                        <td>Matthias Johansson</td>
+                        <td>Plusgironr: 1234567-8</td>
+                    </tr>
+                    <tr>
+                        <td>Stockholm, Sweden</td>
+                        <td>Epost:info@kfcs.se</td>
+                        <td>Bankgironr: 123-4567</td>
+                    </tr>
+                    <tr>
+                        <td>org.nr 123456-6789</td>
+                        <td>Tel +46712345678</td>
+                        <td>IBAN: SE1234567890</td>
+                    </tr>
+                </tbody>
+            </table>
             </section>
             <div></div>
         </div>
     </div>
-
+</div>
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

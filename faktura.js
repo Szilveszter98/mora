@@ -73,33 +73,18 @@ class Storage {
 
 
 
-// print js
-/* const printFaktura = document.querySelector("#printFaktura");
-const fakturaContent = document.querySelector(".faktura");
-printFaktura.addEventListener("click", () => { window.print(fakturaContent) });
- */
 
-/* Print Faktura*/
-function printDiv(printableArea) {
-    var printContents = document.getElementById(printableArea).innerHTML;
-    var originalContents = document.body.innerHTML;
+/*Download direkt pdf*/ 
 
-    document.body.innerHTML = printContents;
-
-    window.print();
-
-    document.body.innerHTML = originalContents;
+  function getpdf() {
+    var pdf = new jsPDF('l', 'pt', 'a4');
+    
+    pdf.addHTML(document.body, function() {
+    
+      pdf.save('faktura.pdf');
+      
+    });
 }
-/*Download direkt pdf*/
-document.querySelector(".btn-pdf").addEventListener("click", function() {
-    var doc = new jsPDF();
-
-    doc.getElementById("printableArea", 10, 10)
-    doc.viewerPreferences({ 'FitWindow': true }, true)
-    doc.save("viewerPreferences.pdf")
-
-})
-
-window.onbeforeunload = function() {
-    localStorage.clear();
-}
+    
+document.getElementById("pdf").addEventListener("click", getpdf);
+ 

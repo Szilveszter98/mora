@@ -29,6 +29,7 @@ console.log(addToCartButtons)
 for (i = 0; i < addToCartButtons.length; i++) {
     let addToCartbutton = addToCartButtons[i];
     addToCartbutton.addEventListener("click", addToCartClicked);
+
 }
 
 let product = {};
@@ -37,12 +38,16 @@ function addToCartClicked(event) {
     let button = event.target;
     let shopItem = button.parentElement.parentElement;
     let item = shopItem.querySelector(".card_title").innerText;
-    let cart=Storage.getCart();
+    let cart = Storage.getCart();
+
+
+
     for (i = 0; i < cart.length; i++) {
         if (item == cart[i].item) {
             console.log(i);
             cart[i].amount += 1;
             Storage.saveCart(cart);
+
             let items = document.querySelectorAll(".cart-item-title");
             for (i = 0; i < items.length; i++) {
                 if (item == items[i].innerHTML) {
@@ -80,7 +85,7 @@ function addItemToCart() {
     cartItemDIV.classList.add("cart-item");
     let cart = Storage.getCart();
     for (const element of cart) {
-            cartItemDIV.innerHTML =
+        cartItemDIV.innerHTML =
             `<span class="cart-item-title">${element.item}</span>
     <span class="cart-price">${element.price} kr</span>
     <input class="cart-quantity-input" type="number" min="1" value="${element.amount}">
@@ -111,10 +116,14 @@ function removeClicked(event) {
             cart.splice(i, 1);
         }
     }
+
+
+
     Storage.saveCart(cart);
     removeItem.remove();
     uppdateTotal();
 }
+
 
 function uppdateTotal() {
     let total = 0;
@@ -163,7 +172,6 @@ class Storage {
     }
     static getCart() {
         return localStorage.getItem("cart") ?
-            JSON.parse(localStorage.getItem("cart")) :
-            [];
+            JSON.parse(localStorage.getItem("cart")) : [];
     }
 }
